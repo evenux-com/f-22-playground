@@ -1,0 +1,55 @@
+<div class="buttons">
+  <h5 class="mb-3">Buttons</h5>
+  <div class="row">
+    @for (button of buttons1; track button) {
+    <button
+      archangelButton
+      [color]="button.color"
+      [loading]="button.loading"
+      (click)="simulateAction(button)"
+    >
+      Simulate
+    </button>
+    }
+  </div>
+  <div class="row">
+    @for (button of buttons2; track button) {
+    <button
+      archangelButton
+      [color]="button.color"
+      [rounded]="true"
+      [loading]="button.loading"
+      (click)="simulateAction(button)"
+    >
+      Simulate
+    </button>
+    }
+  </div>
+  <div class="row">
+    @for (button of buttons3; track button) {
+    <button
+      archangelButton
+      [color]="button.color"
+      [small]="true"
+      [rounded]="true"
+      [loading]="button.loading"
+      (click)="simulateAction(button)"
+    >
+      Simulate
+    </button>
+    }
+  </div>
+  <div class="row">
+    @for (button of buttons3; track button) {
+    <button
+      archangelButton
+      [color]="button.color"
+      [small]="true"
+      [rounded]="true"
+      [disabled]="true"
+    >
+      Disabled
+    </button>
+    }
+  </div>
+</div>

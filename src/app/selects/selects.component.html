@@ -1,0 +1,56 @@
+<div class="selects">
+  <div class="header mb-3">
+    <h5>Select dropdown</h5>
+    <button archangelButton color="primary" [small]="true" [rounded]="true" [border]="true" (click)="shuffleOptions()">Shuffle options</button>
+  </div>
+  <div class="row">
+    <div class="select">
+      <span class="form-label">Select a value:</span>
+      <archangel-select
+        class="mb-2"
+        [options]="options1"
+        valueField="value"
+        nameField="label"
+        [(ngModel)]="selectedOption1Value"
+        (ngModelChange)="onSelectOption1()"
+        [hasSearch]="true"
+        placeholder="Select an option..."
+        searchPlaceholder="Search for an option..."
+      ></archangel-select>
+      @if (selectedOption1 && selectedOption1Value) {
+        <p>Selected value: {{ selectedOption1.label }} (value = {{ selectedOption1Value }})</p>
+      } @else {
+        <p>No option selected...</p>
+      }
+    </div>
+
+    <div class="select">
+      <span class="form-label">Select a value:</span>
+      <archangel-select
+        class="mb-2"
+        [options]="options2"
+        valueField="value"
+        nameField="label"
+        [hasSearch]="true"
+        (optionSelected)="onSelectOption2($event)"
+        placeholder="Select an option..."
+        searchPlaceholder="Search for an option..."
+      ></archangel-select>
+      @if (selectedOption2 && selectedOption2Value) {
+        <p>Selected value: {{ selectedOption2?.label }} (value = {{ selectedOption2Value }})</p>
+      } @else {
+        <p>No option selected...</p>
+      }
+    </div>
+
+    <form class="select" [formGroup]="form">
+      <span class="form-label">Select a value:</span>
+      <archangel-select class="mb-2" [options]="options3" valueField="value" nameField="label" formControlName="selection" [hasSearch]="false" placeholder="Select an option..."></archangel-select>
+      @if (selectedOption3 !== undefined && selectedOption3Value !== undefined) {
+        <p>Selected value: {{ selectedOption3?.label }} (value = {{ selectedOption3Value }})</p>
+      } @else {
+        <p>No option selected...</p>
+      }
+    </form>
+  </div>
+</div>

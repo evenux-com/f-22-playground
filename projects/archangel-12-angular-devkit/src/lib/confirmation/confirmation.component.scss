@@ -1,0 +1,11 @@
+.dialog-content {
+  background-color: var(--black-color);
+  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+  display: flex;
+  justify-content: end;
+}

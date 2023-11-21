@@ -1,0 +1,89 @@
+.btn {
+  align-items: center;
+  padding-left: var(--lg-button-x-padding);
+  padding-right: var(--lg-button-x-padding);
+  padding-top: var(--lg-button-y-padding);
+  padding-bottom: var(--lg-button-y-padding);
+  border: 0px solid transparent;
+  transition: width 0.75s ease-in-out;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    display: inline-block;
+    top: var(--lg-button-y-padding);
+    left: var(--lg-button-x-padding);
+    transition: all 0.75s ease-in-out;
+  }
+
+  &.btn-small {
+    padding-left: var(--sm-button-x-padding);
+    padding-right: var(--sm-button-x-padding);
+    padding-top: var(--sm-button-y-padding);
+    padding-bottom: var(--sm-button-y-padding);
+
+    span {
+      top: var(--sm-button-y-padding);
+      left: var(--sm-button-x-padding);
+    }
+  }
+
+  &.btn-bordered {
+    border-radius: var(-button-border-radius);
+    border-width: var(--button-border-width);
+  }
+
+  &.btn-rounded {
+    border-radius: var(--button-border-radius);
+  }
+
+  &.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--primary-button-text-color);
+    border-color: var(--primary-button-border-color);
+
+    &:hover,
+    &:focus {
+      background-color: var(--primary-background-event-color);
+    }
+  }
+
+  &.btn-disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  &.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--secondary-button-text-color);
+    border-color: var(--secondary-button-border-color);
+
+    &:hover,
+    &:focus {
+      background-color: var(--secondary-background-event-color);
+    }
+  }
+
+  &.btn-white {
+    background-color: var(--white-color);
+    color: var(--white-button-text-color);
+    border-color: var(--white-button-border-color);
+
+    &:hover,
+    &:focus {
+      background-color: var(--white-background-event-color);
+    }
+  }
+
+  &.btn-black {
+    background-color: var(--black-color);
+    color: var(--black-button-text-color);
+    border-color: var(--black-button-border-color);
+
+    &:hover,
+    &:focus {
+      background-color: var(--black-background-event-color);
+    }
+  }
+}
