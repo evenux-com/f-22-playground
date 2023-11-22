@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2023 by original authors @ fontello.com</metadata>
+<defs>
+<font id="archangel-12" horiz-adv-x="1000" >
+<font-face font-family="archangel-12" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="fighter-jet" unicode="&#xf0fb;" d="M1071 314q0-18-160-53l-197-18-125-36h-35l-164-196h39q14 0 25-3t10-6-10-7-25-2h-179v18h36v232h-90l-107-125h-53l-18 18v107h18v18h71v4l-107 14v71l107 13v5h-71v18h-18v107l18 18h53l107-125h90v232h-36v18h179q14 0 25-3t10-6-10-7-25-2h-39l164-197h35l125-35 197-18q71-16 111-29t45-19z" horiz-adv-x="1071.4" />
+</font>
+</defs>
+</svg>
