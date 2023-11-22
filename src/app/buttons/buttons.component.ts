@@ -6,12 +6,12 @@ import {
 
 @Component({
   standalone: true,
-  selector: 'app-buttons',
+  selector: 'app-buttons-demo',
   imports: [ArchangelButtonDirective, LoaderComponent],
   templateUrl: './buttons.component.html',
   styleUrl: './buttons.component.scss',
 })
-export class ButtonsComponent {
+export class ButtonsDemoComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public buttons1: any[] = [];
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

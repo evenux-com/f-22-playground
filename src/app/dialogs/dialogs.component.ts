@@ -8,13 +8,13 @@ import { take } from 'rxjs';
 
 @Component({
   standalone: true,
-  selector: 'app-dialogs',
+  selector: 'app-dialogs-demo',
   imports: [ArchangelButtonDirective],
   providers: [ConfirmationService, NotificationService],
   templateUrl: './dialogs.component.html',
   styleUrl: './dialogs.component.scss',
 })
-export class DialogsComponent {
+export class DialogsDemoComponent {
   constructor(
     private readonly confirmationService: ConfirmationService,
     private readonly notificationService: NotificationService
@@ -22,7 +22,7 @@ export class DialogsComponent {
 
   public openConfirmation(): void {
     const ref = this.confirmationService.show(
-      'This is a sample confirmation, do you agree?',
+      'This is a sample confirmation - do you agree?',
       'Agree',
       'Cancel'
     );
@@ -37,7 +37,7 @@ export class DialogsComponent {
 
   public openNotification(): void {
     this.notificationService.show(
-      'This is a sample notification, that you can display...'
+      'This is a sample notification you can display...'
     );
   }
 }

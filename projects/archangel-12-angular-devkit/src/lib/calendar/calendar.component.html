@@ -1,0 +1,22 @@
+<div class="calendar">
+  <div class="header">
+    <div class="day">Mon</div>
+    <div class="day">Tue</div>
+    <div class="day">Wed</div>
+    <div class="day">Thu</div>
+    <div class="day">Fri</div>
+    <div class="day">Sat</div>
+    <div class="day">Sun</div>
+  </div>
+  @for (week of weeks; track week) {
+  <div class="weeks">
+    @for (day of week; track day) {
+    <div class="day" [class.disabled]="!day">
+      @if (day) {
+      <span class="number">{{ day }}</span>
+      }
+    </div>
+    }
+  </div>
+  }
+</div>

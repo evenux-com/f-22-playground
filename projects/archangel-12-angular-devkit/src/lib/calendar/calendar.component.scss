@@ -1,0 +1,66 @@
+@import "../../../styles/mixins";
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--background-color);
+    padding: 18px 0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .weeks {
+    display: flex;
+    flex-wrap: wrap;
+
+    .day {
+      flex: 1;
+      max-width: calc(14.2857% - 10px);
+      margin: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      border: 1px solid var(--background-color);
+      font-size: 13px;
+      font-weight: bolder;
+      cursor: pointer;
+      background-color: var(--background-color);
+      border-radius: 12px;
+      color: var(--text-color);
+
+      @include mobile() {
+        line-height: 40px;
+        max-width: calc(14.2857% - 2px);
+        margin: 2px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:not(.disabled):hover {
+        background-color: var(--primary-color);
+      }
+
+      .number {
+        font-size: 60px;
+        font-weight: normal;
+        color: #ffffff40;
+        line-height: 92px;
+
+        @include mobile {
+          line-height: 30px;
+          font-size: 13px;
+          color: var(--white-color);
+        }
+      }
+    }
+  }
+}

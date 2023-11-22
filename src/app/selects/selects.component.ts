@@ -1,16 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SelectComponent, ArchangelButtonDirective, NotificationService } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import {
+  SelectComponent,
+  ArchangelButtonDirective,
+  NotificationService,
+} from '../../../projects/archangel-12-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
-  selector: 'app-selects',
-  imports: [FormsModule, ReactiveFormsModule, SelectComponent, ArchangelButtonDirective],
+  selector: 'app-selects-demo',
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    SelectComponent,
+    ArchangelButtonDirective,
+  ],
   providers: [NotificationService],
   templateUrl: './selects.component.html',
   styleUrl: './selects.component.scss',
 })
-export class SelectsComponent implements OnInit {
+export class SelectsDemoComponent implements OnInit {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public selectedOption1!: any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -50,18 +59,22 @@ export class SelectsComponent implements OnInit {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly notificationService: NotificationService,
+    private readonly notificationService: NotificationService
   ) {}
 
   public ngOnInit(): void {
     this.form.controls.selection.valueChanges.subscribe((value) => {
       this.selectedOption3Value = !!value;
-      this.selectedOption3 = this.options3.find((o) => o.value === this.selectedOption3Value);
+      this.selectedOption3 = this.options3.find(
+        (o) => o.value === this.selectedOption3Value
+      );
     });
   }
 
   public onSelectOption1(): void {
-    this.selectedOption1 = this.options1.find((o) => o.value === this.selectedOption1Value);
+    this.selectedOption1 = this.options1.find(
+      (o) => o.value === this.selectedOption1Value
+    );
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -74,7 +87,9 @@ export class SelectsComponent implements OnInit {
     this.options1 = this.shuffle(this.options1);
     this.options2 = this.shuffle(this.options2);
 
-    this.notificationService.show('Options have been successfully shuffled. This goes to demonstrate that all options in the array can be modified/changed and update in real time!');
+    this.notificationService.show(
+      'Options have been successfully shuffled. This goes to demonstrate that all options in the array can be modified/changed and update in real time!'
+    );
   }
 
   private shuffle<T>(array: T[]): T[] {
@@ -82,7 +97,10 @@ export class SelectsComponent implements OnInit {
 
     for (let i = shuffledArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
     }
 
     return shuffledArray;

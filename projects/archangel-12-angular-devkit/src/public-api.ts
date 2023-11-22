@@ -5,3 +5,4 @@ export * from './lib/notification/notification.component';
 export * from './lib/confirmation/confirmation.component';
 export * from './lib/notification/notification.service';
 export * from './lib/confirmation/confirmation.service';
+export * from './lib/calendar/calendar.component';

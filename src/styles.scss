@@ -6,12 +6,8 @@
 body {
   background-image: url("/assets/images/background.jpg"),
     url("/archangel-12-playground/assets/images/background.jpg");
-  background-size: cover;
+  background-size: cover cover;
   background-position: center center;
   background-repeat: no-repeat;
   font-family: "Cutive Mono", monospace;
-
-  @include mobile() {
-    background-size: auto;
-  }
 }

@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
-import { ButtonsComponent } from './buttons/buttons.component';
-import { SelectsComponent } from './selects/selects.component';
-import { DialogsComponent } from './dialogs/dialogs.component';
+import { ButtonsDemoComponent } from './buttons/buttons.component';
+import { SelectsDemoComponent } from './selects/selects.component';
+import { DialogsDemoComponent } from './dialogs/dialogs.component';
+import { CalendarDemoComponent } from './calendar/calendar.component';
 
 @Component({
   standalone: true,
@@ -13,9 +14,10 @@ import { DialogsComponent } from './dialogs/dialogs.component';
     CommonModule,
     RouterOutlet,
     HeaderComponent,
-    ButtonsComponent,
-    SelectsComponent,
-    DialogsComponent,
+    ButtonsDemoComponent,
+    SelectsDemoComponent,
+    DialogsDemoComponent,
+    CalendarDemoComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
