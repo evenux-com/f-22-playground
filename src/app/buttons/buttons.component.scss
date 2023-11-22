@@ -22,13 +22,15 @@
       margin-bottom: 0;
     }
 
-    &.row-full-width button {
-      flex: 1 1 30%;
+    @include desktop() {
+      &.row-full-width button {
+        flex: 1 1 30%;
+      }
     }
 
     @include mobile() {
       button {
-        flex: 25%;
+        flex: 50%;
       }
     }
   }

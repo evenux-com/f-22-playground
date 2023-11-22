@@ -106,7 +106,7 @@ export class ArchangelButtonDirective implements OnChanges {
           textInitialOffset - this.loaderSize - this.loaderGap;
       } else {
         textInitialOffset =
-          textInitialOffset - this.loaderSize * 2 - this.loaderGap;
+          textInitialOffset - this.loaderSize * 2 - this.loaderGap - 7; // 7 = magic number or something
       }
 
       const r = document.querySelector(':root');
