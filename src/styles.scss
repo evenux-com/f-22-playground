@@ -1,9 +1,17 @@
 @import "../projects/archangel-12-angular-devkit/styles";
+@import "../projects/archangel-12-angular-devkit/styles/mixins";
+
 @import "./assets/icon-font/css/archangel-12.css";
 
 body {
   background-image: url("/assets/images/background.jpg"),
     url("/archangel-12-playground/assets/images/background.jpg");
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   font-family: "Cutive Mono", monospace;
+
+  @include mobile() {
+    background-size: auto;
+  }
 }
