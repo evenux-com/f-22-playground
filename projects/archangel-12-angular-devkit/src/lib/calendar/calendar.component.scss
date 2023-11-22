@@ -11,6 +11,17 @@
     padding: 18px 0;
     border-radius: 12px;
     margin-bottom: 10px;
+
+    @include mobile() {
+      .day {
+        font-size: 0;
+
+        &::first-letter {
+          font-size: 13px;
+          font-weight: bolder;
+        }
+      }
+    }
   }
 
   .weeks {
