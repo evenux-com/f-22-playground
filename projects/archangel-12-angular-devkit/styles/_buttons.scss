@@ -1,20 +1,25 @@
 .btn {
-  align-items: center;
   padding-left: var(--lg-button-x-padding);
   padding-right: var(--lg-button-x-padding);
   padding-top: var(--lg-button-y-padding);
   padding-bottom: var(--lg-button-y-padding);
   border: 0px solid transparent;
-  transition: width 0.75s ease-in-out;
+  transition: width 0.33s ease-in-out;
   position: relative;
   cursor: pointer;
+  text-align: center;
+  align-self: flex-start;
 
   span {
     position: absolute;
     display: inline-block;
     top: var(--lg-button-y-padding);
     left: var(--lg-button-x-padding);
-    transition: all 0.75s ease-in-out;
+    transition: all 0.33s ease-in-out;
+  }
+
+  &:not(.btn-disabled):active {
+    transform: translateY(2px);
   }
 
   &.btn-small {
@@ -43,10 +48,13 @@
     color: var(--primary-button-text-color);
     border-color: var(--primary-button-border-color);
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: var(--primary-background-event-color);
     }
+  }
+
+  &.btn-full-width {
+    width: 100%;
   }
 
   &.btn-disabled {
@@ -59,8 +67,7 @@
     color: var(--secondary-button-text-color);
     border-color: var(--secondary-button-border-color);
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: var(--secondary-background-event-color);
     }
   }
@@ -70,8 +77,7 @@
     color: var(--white-button-text-color);
     border-color: var(--white-button-border-color);
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: var(--white-background-event-color);
     }
   }
@@ -81,8 +87,7 @@
     color: var(--black-button-text-color);
     border-color: var(--black-button-border-color);
 
-    &:hover,
-    &:focus {
+    &:hover {
       background-color: var(--black-background-event-color);
     }
   }

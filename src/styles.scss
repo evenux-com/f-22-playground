@@ -1,1 +1,8 @@
 @import "../projects/archangel-12-angular-devkit/styles";
+@import "./assets//icon-font/css/archangel-12.css";
+
+body {
+  background-image: url("/assets/images/background.jpg");
+  background-size: cover;
+  font-family: "Cutive Mono", monospace;
+}

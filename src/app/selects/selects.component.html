@@ -1,7 +1,16 @@
-<div class="selects">
+<div class="wrapper">
   <div class="header mb-3">
     <h5>Select dropdown</h5>
-    <button archangelButton color="primary" [small]="true" [rounded]="true" [border]="true" (click)="shuffleOptions()">Shuffle options</button>
+    <button
+      archangelButton
+      color="primary"
+      [small]="true"
+      [rounded]="true"
+      [border]="true"
+      (click)="shuffleOptions()"
+    >
+      Shuffle
+    </button>
   </div>
   <div class="row">
     <div class="select">
@@ -18,9 +27,12 @@
         searchPlaceholder="Search for an option..."
       ></archangel-select>
       @if (selectedOption1 && selectedOption1Value) {
-        <p>Selected value: {{ selectedOption1.label }} (value = {{ selectedOption1Value }})</p>
+      <p>
+        Selected value: {{ selectedOption1.label }} (value =
+        {{ selectedOption1Value }})
+      </p>
       } @else {
-        <p>No option selected...</p>
+      <p>No option selected...</p>
       }
     </div>
 
@@ -37,19 +49,34 @@
         searchPlaceholder="Search for an option..."
       ></archangel-select>
       @if (selectedOption2 && selectedOption2Value) {
-        <p>Selected value: {{ selectedOption2?.label }} (value = {{ selectedOption2Value }})</p>
+      <p>
+        Selected value: {{ selectedOption2?.label }} (value =
+        {{ selectedOption2Value }})
+      </p>
       } @else {
-        <p>No option selected...</p>
+      <p>No option selected...</p>
       }
     </div>
 
     <form class="select" [formGroup]="form">
       <span class="form-label">Select a value:</span>
-      <archangel-select class="mb-2" [options]="options3" valueField="value" nameField="label" formControlName="selection" [hasSearch]="false" placeholder="Select an option..."></archangel-select>
-      @if (selectedOption3 !== undefined && selectedOption3Value !== undefined) {
-        <p>Selected value: {{ selectedOption3?.label }} (value = {{ selectedOption3Value }})</p>
+      <archangel-select
+        class="mb-2"
+        [options]="options3"
+        valueField="value"
+        nameField="label"
+        formControlName="selection"
+        [hasSearch]="false"
+        placeholder="Select an option..."
+      ></archangel-select>
+      @if (selectedOption3 !== undefined && selectedOption3Value !== undefined)
+      {
+      <p>
+        Selected value: {{ selectedOption3?.label }} (value =
+        {{ selectedOption3Value }})
+      </p>
       } @else {
-        <p>No option selected...</p>
+      <p>No option selected...</p>
       }
     </form>
   </div>

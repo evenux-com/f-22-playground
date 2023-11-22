@@ -1,12 +1,18 @@
-.selects {
-  background-color: #2e3260;
+@import "../../../projects/archangel-12-angular-devkit/styles/mixins";
+
+.wrapper {
+  background-color: #2a33417d;
   padding: 20px;
   margin-bottom: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--background-color);
 
   .header {
     display: flex;
     gap: 20px;
     align-items: center;
+    border-bottom: 1px dashed var(--background-color);
+    padding-bottom: 12px;
   }
 
   .row {
@@ -16,6 +22,14 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include mobile() {
+      flex-direction: column;
+
+      .select {
+        margin-bottom: 20px;
+      }
     }
 
     .select {

@@ -3,7 +3,16 @@
     <h5 class="mb-3">Notification</h5>
     <p class="mb-4 mb-md-3">{{ data.text }}</p>
     <div class="footer">
-      <button type="button" class="btn btn-rounded btn-primary ml-auto" (click)="dialogRef.close()">Close</button>
+      <button
+        type="button"
+        archangelButton
+        color="black"
+        [rounded]="true"
+        [border]="true"
+        (click)="dialogRef.close()"
+      >
+        Close
+      </button>
     </div>
   </div>
 </div>

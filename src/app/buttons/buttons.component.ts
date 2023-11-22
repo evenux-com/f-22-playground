@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { ArchangelButtonDirective, LoaderComponent } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import {
+  ArchangelButtonDirective,
+  LoaderComponent,
+} from '../../../projects/archangel-12-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
@@ -17,7 +20,7 @@ export class ButtonsComponent {
   public buttons3: any[] = [];
 
   constructor() {
-    const colors = ['primary', 'secondary', 'black', 'white'];
+    const colors = ['primary', 'secondary', 'black'];
     for (const color of colors) {
       this.buttons1.push({
         color: color,

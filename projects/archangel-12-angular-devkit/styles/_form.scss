@@ -1,11 +1,11 @@
 .form-control {
-  border: 2px solid var(--black-color);
+  border: 2px solid var(--background-color);
   border-radius: 6px;
   display: block;
   padding: 12px;
   width: 100%;
-  color: var(--text-color);
-  background-color: var(--white-color);
+  color: var(--white-color);
+  background-color: var(--background-color);
   font-size: 13px;
 
   &:focus {
@@ -17,18 +17,18 @@
   }
 
   &::-webkit-input-placeholder {
-    color: var(--black-color);
+    color: var(--white-color);
   }
   &:-moz-placeholder {
-    color: var(--black-color);
+    color: var(--white-color);
     opacity: 1;
   }
   &::-moz-placeholder {
-    color: var(--black-color);
+    color: var(--white-color);
     opacity: 1;
   }
   &:-ms-input-placeholder {
-    color: var(--black-color);
+    color: var(--white-color);
   }
 }
 

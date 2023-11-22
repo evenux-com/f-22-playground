@@ -3,10 +3,27 @@
     <h5 class="mb-3">Confirmation</h5>
     <p class="mb-5">{{ data.text }}</p>
     <div class="footer">
-      <button type="button" class="btn btn-sm btn-secondary btn-rounded mr-2" (click)="dialogRef.close(false)">
+      <button
+        type="button"
+        class="mr-2"
+        archangelButton
+        color="primary"
+        [rounded]="true"
+        [border]="true"
+        (click)="dialogRef.close(false)"
+      >
         {{ data.cancelText }}
       </button>
-      <button type="button" class="btn btn-sm btn-primary btn-rounded" (click)="dialogRef.close(true)">{{ data.submitText }}</button>
+      <button
+        type="button"
+        archangelButton
+        color="black"
+        [rounded]="true"
+        [border]="true"
+        (click)="dialogRef.close(true)"
+      >
+        {{ data.submitText }}
+      </button>
     </div>
   </div>
 </div>

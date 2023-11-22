@@ -22,7 +22,7 @@
   .form-control {
     padding-right: 32px;
     transition: none;
-    color: var(--primary-color);
+    color: var(--white-color);
     font-weight: bolder;
   }
 
@@ -59,13 +59,13 @@
   border: 2px solid var(--white-color);
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
-  background-color: var(--white-color);
+  background-color: var(--background-color);
   border-top: none;
 
   a,
   button {
     padding: 12px;
-    color: var(--black-color);
+    color: var(--text-color);
     cursor: pointer;
     font-size: 13px;
 
@@ -78,6 +78,6 @@
 
   p {
     padding: 12px;
-    color: var(--black-color);
+    color: var(--white-color);
   }
 }

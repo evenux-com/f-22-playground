@@ -1,55 +1,56 @@
-<div class="buttons">
-  <h5 class="mb-3">Buttons</h5>
-  <div class="row">
+<div class="wrapper">
+  <h5 class="mb-3">Dynamic buttons</h5>
+  <div class="row row-full-width">
     @for (button of buttons1; track button) {
     <button
       archangelButton
       [color]="button.color"
+      [rounded]="true"
+      [border]="true"
       [loading]="button.loading"
+      [fullWidth]="true"
       (click)="simulateAction(button)"
     >
       Simulate
     </button>
     }
   </div>
+
   <div class="row">
     @for (button of buttons2; track button) {
     <button
       archangelButton
       [color]="button.color"
       [rounded]="true"
+      [border]="true"
+      [loading]="button.loading"
+      (click)="simulateAction(button)"
+    >
+      Simulate
+    </button>
+    } @for (button of buttons3; track button) {
+    <button
+      archangelButton
+      [color]="button.color"
+      [small]="true"
+      [rounded]="true"
+      [border]="true"
       [loading]="button.loading"
       (click)="simulateAction(button)"
     >
       Simulate
     </button>
     }
-  </div>
-  <div class="row">
-    @for (button of buttons3; track button) {
+
     <button
       archangelButton
-      [color]="button.color"
+      [color]="'primary'"
       [small]="true"
       [rounded]="true"
-      [loading]="button.loading"
-      (click)="simulateAction(button)"
-    >
-      Simulate
-    </button>
-    }
-  </div>
-  <div class="row">
-    @for (button of buttons3; track button) {
-    <button
-      archangelButton
-      [color]="button.color"
-      [small]="true"
-      [rounded]="true"
+      [border]="true"
       [disabled]="true"
     >
       Disabled
     </button>
-    }
   </div>
 </div>

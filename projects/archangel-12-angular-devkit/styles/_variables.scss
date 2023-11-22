@@ -5,11 +5,11 @@
   --container-padding: 20px;
 
   // Colors
-  --primary-color: #5673ae;
-  --secondary-color: #96f3dc;
-  --black-color: #000000;
+  --primary-color: #222a37;
+  --secondary-color: #2a3341;
+  --black-color: #151921;
   --white-color: #ffffff;
-  --background-color: #131529;
+  --background-color: #151921;
   --text-color: #ffffff;
 
   // Text
@@ -23,24 +23,24 @@
 
   // Buttons
   --button-border-width: 1px;
-  --button-border-radius: 24px;
+  --button-border-radius: 8px;
   --lg-button-x-padding: 36px;
-  --lg-button-y-padding: 12px;
+  --lg-button-y-padding: 14px;
   --sm-button-x-padding: 18px;
-  --sm-button-y-padding: 8px;
+  --sm-button-y-padding: 9px;
 
   --primary-button-text-color: #ffffff;
-  --secondary-button-text-color: #000000;
+  --secondary-button-text-color: #ffffff;
   --black-button-text-color: #ffffff;
-  --white-button-text-color: #000000;
+  --white-button-text-color: #151921;
 
   --primary-background-event-color: #2f436e;
-  --secondary-background-event-color: #78c1af;
-  --black-background-event-color: #5a5a5a;
-  --white-background-event-color: #babee2;
+  --secondary-background-event-color: #2f436e;
+  --black-background-event-color: #2f436e;
+  --white-background-event-color: #2f436e;
 
-  --primary-button-border-color: #000000;
-  --secondary-button-border-color: #000000;
-  --black-button-border-color: #000000;
-  --white-button-border-color: #000000;
+  --primary-button-border-color: #151921;
+  --secondary-button-border-color: #151921;
+  --black-button-border-color: #151921;
+  --white-button-border-color: #151921;
 }

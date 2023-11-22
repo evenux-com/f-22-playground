@@ -1,17 +1,4 @@
-.dialog-content {
-  background-color: var(--black-color);
-  -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
-  box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.15);
-
-  h5 {
-    color: var(--white-color);
-    font-size: 21px;
-    font-weight: bolder;
-  }
-
-  .footer {
-    display: flex;
-    justify-content: end;
-  }
+.footer {
+  display: flex;
+  justify-content: end;
 }
