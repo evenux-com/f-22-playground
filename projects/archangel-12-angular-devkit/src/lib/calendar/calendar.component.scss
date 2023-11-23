@@ -66,6 +66,10 @@
         color: #ffffff40;
         line-height: 92px;
 
+        &.light {
+          opacity: 0.33;
+        }
+
         @include mobile {
           line-height: 30px;
           font-size: 13px;

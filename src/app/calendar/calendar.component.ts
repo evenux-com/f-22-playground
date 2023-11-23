@@ -8,4 +8,7 @@ import { CalendarComponent } from '../../../projects/archangel-12-angular-devkit
   templateUrl: './calendar.component.html',
   styleUrl: './calendar.component.scss',
 })
-export class CalendarDemoComponent {}
+export class CalendarDemoComponent {
+  public month: number = new Date().getMonth() + 1;
+  public year: number = new Date().getFullYear();
+}

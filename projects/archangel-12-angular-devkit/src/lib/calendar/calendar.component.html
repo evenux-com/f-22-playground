@@ -13,7 +13,9 @@
     @for (day of week; track day) {
     <div class="day" [class.disabled]="!day">
       @if (day) {
-      <span class="number">{{ day }}</span>
+      <span class="number" [class.light]="day.month !== month">
+        {{ day.number }}
+      </span>
       }
     </div>
     }
