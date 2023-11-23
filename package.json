@@ -6,7 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "lint": "eslint --ext .ts,.html .",
+    "format": "prettier --write 'src/*.ts' 'src/app/*.ts' 'src/app/*/*.ts' 'projects/archangel-12-angular-devkit/src/*.ts' 'projects/archangel-12-angular-devkit/src/lib/*/*.ts'",
+    "lint-and-format": "npm run lint && npm run format"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run format && git add ."
+    }
   },
   "private": true,
   "dependencies": {
@@ -25,9 +32,19 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.1",
+    "@angular-eslint/builder": "^17.1.0",
+    "@angular-eslint/eslint-plugin": "^17.1.0",
+    "@angular-eslint/eslint-plugin-template": "^17.1.0",
+    "@angular-eslint/schematics": "^17.1.0",
+    "@angular-eslint/template-parser": "^17.1.0",
     "@angular/cli": "^17.0.1",
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint": "^8.54.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

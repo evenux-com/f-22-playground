@@ -11,6 +11,7 @@ export class CalendarComponent implements OnInit {
   @Input() year: number = 2024;
   @Input() startDayOfWeek: number = 1; // Default to Monday (0 is Sunday, 1 is Monday, and so on)
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   weeks: any[][] = [];
 
   ngOnInit() {
@@ -30,18 +31,15 @@ export class CalendarComponent implements OnInit {
 
     // Calculate the days from the previous month
     const prevMonthLastDay = new Date(this.year, this.month - 1, 0).getDate();
-    const prevMonthDays = Array.from(
-      { length: daysUntilStart },
-      (_, i) => prevMonthLastDay - i
-    ).reverse();
+    const prevMonthDays = Array.from({ length: daysUntilStart }, (_, i) => prevMonthLastDay - i).reverse();
 
     // Calculate the days from the next month
     const totalDaysInCalendar = daysInMonth + daysUntilStart;
-    const daysAfterEnd =
-      totalDaysInCalendar % 7 === 0 ? 0 : 7 - (totalDaysInCalendar % 7);
+    const daysAfterEnd = totalDaysInCalendar % 7 === 0 ? 0 : 7 - (totalDaysInCalendar % 7);
     const nextMonthDays = Array.from({ length: daysAfterEnd }, (_, i) => i + 1);
 
     for (let i = 0; i < 6; i++) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const week: any[] = [];
 
       for (let j = 0; j < 7; j++) {
