@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  ArchangelButtonDirective,
-  LoaderComponent,
-} from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { ArchangelButtonDirective, LoaderComponent } from '../../../projects/archangel-12-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
@@ -19,38 +16,56 @@ export class ButtonsDemoComponent {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public buttons3: any[] = [];
 
+  public b1Loading: boolean = false;
+  public b2Loading: boolean = false;
+  public b3Loading: boolean = false;
+
   constructor() {
-    const colors = ['primary', 'secondary', 'black'];
+    const colors = ['primary', 'secondary', 'black', 'transparent', 'disabled'];
+    let i = 1;
     for (const color of colors) {
-      this.buttons1.push({
+      const button = {
         color: color,
         loading: false,
-      });
-    }
+        disabled: i === 5,
+      };
 
-    for (const color of colors) {
-      this.buttons2.push({
-        color: color,
-        loading: false,
-      });
-    }
-
-    for (const color of colors) {
-      this.buttons3.push({
-        color: color,
-        loading: false,
-      });
+      this.buttons1.push({ ...button });
+      this.buttons2.push({ ...button });
+      this.buttons3.push({ ...button });
+      i++;
     }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public simulateAction(button: any): void {
-    if (!button.loading) {
+    if (!button.disabled && !button.loading) {
       button.loading = true;
       clearTimeout(button.timeout);
       button.timeout = setTimeout(() => {
         button.loading = false;
       }, 3000);
+    }
+  }
+
+  public simulateActionV1(): void {
+    if (!this.b1Loading) {
+      this.b1Loading = true;
+      setTimeout(() => (this.b1Loading = false), 3000);
+    }
+  }
+
+  public simulateActionV2(): void {
+    if (!this.b2Loading) {
+      this.b2Loading = true;
+      setTimeout(() => (this.b2Loading = false), 3000);
+    }
+  }
+
+  public simulateActionV3(): void {
+    if (!this.b3Loading) {
+      this.b3Loading = true;
+      setTimeout(() => (this.b3Loading = false), 3000);
     }
   }
 }

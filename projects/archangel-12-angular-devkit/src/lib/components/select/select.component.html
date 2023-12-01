@@ -1,7 +1,9 @@
 <div cdkOverlayOrigin #trigger #origin="cdkOverlayOrigin">
   <div class="input-wrapper" [class.expanded]="showingOptions">
     <input
-      class="form-control"
+      archangelFormControl
+      [background]="background"
+      [size]="size"
       [disabled]="isDisabled"
       [ngModel]="selectedValue"
       [placeholder]="hasSearch ? (showingOptions ? searchPlaceholder : placeholder || '') : placeholder"
@@ -26,7 +28,7 @@
 >
   <div class="dropdown-options">
     @for (option of filteredOptions; track option) {
-      <a (click)="selectOption(option)">
+      <a (click)="selectOption(option)" [class.disabled]="option.disabled">
         {{ option[nameField] }}
       </a>
     }

@@ -23,7 +23,6 @@
     padding-right: 32px;
     transition: none;
     color: var(--white-color);
-    font-weight: bolder;
   }
 
   xo-icon {
@@ -73,6 +72,10 @@
       background-color: var(--primary-color);
       color: var(--white-color);
       font-weight: bolder;
+    }
+
+    &.disabled {
+      opacity: 0.5;
     }
   }
 

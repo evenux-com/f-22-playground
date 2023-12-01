@@ -2,31 +2,118 @@
   border: 2px solid var(--background-color);
   border-radius: 6px;
   display: block;
-  padding: 12px;
+  padding-top: var(--lg-form-control-y-padding);
+  padding-bottom: var(--lg-form-control-y-padding);
   width: 100%;
   color: var(--white-color);
-  background-color: var(--background-color);
-  font-size: 13px;
+  font-size: var(--font-size);
+  line-height: var(--font-size);
 
   &:focus {
     border-color: var(--primary-color);
   }
 
+  &.form-control-small {
+    padding-left: var(--sm-form-control-x-padding);
+    padding-right: var(--sm-form-control-x-padding);
+    padding-top: var(--sm-form-control-y-padding);
+    padding-bottom: var(--sm-form-control-y-padding);
+  }
+
+  &.form-control-medium {
+    padding-left: var(--md-form-control-x-padding);
+    padding-right: var(--md-form-control-x-padding);
+    padding-top: var(--md-form-control-y-padding);
+    padding-bottom: var(--md-form-control-y-padding);
+  }
+
+  &.form-control-large {
+    padding-left: var(--lg-form-control-x-padding);
+    padding-right: var(--lg-form-control-x-padding);
+    padding-top: var(--lg-form-control-y-padding);
+    padding-bottom: var(--lg-form-control-y-padding);
+  }
+
+  &.form-control-bordered {
+    border-radius: var(--form-control-border-radius);
+    border-width: var(--form-control-border-width);
+  }
+
   &.form-control-rounded {
-    border-radius: 999px;
+    border-radius: var(--form-control-border-radius);
+  }
+
+  &.form-control-full-width {
+    width: 100%;
+  }
+
+  &.form-control-disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.form-control-background-primary {
+    background-color: var(--primary-color);
+    color: var(--primary-form-control-text-color);
+    border-color: var(--primary-form-control-border-color);
+
+    @include desktop() {
+      &:hover {
+        background-color: var(--primary-form-control-background-event-color);
+      }
+    }
+  }
+
+  &.form-control-background-secondary {
+    background-color: var(--secondary-color);
+    color: var(--secondary-form-control-text-color);
+    border-color: var(--secondary-form-control-border-color);
+
+    @include desktop() {
+      &:hover {
+        background-color: var(--secondary-form-control-background-event-color);
+      }
+    }
+  }
+
+  &.form-control-background-white {
+    background-color: var(--white-color);
+    color: var(--white-form-control-text-color);
+    border-color: var(--white-form-control-border-color);
+
+    @include desktop() {
+      &:hover {
+        background-color: var(--white-form-control-background-event-color);
+      }
+    }
+  }
+
+  &.form-control-background-black {
+    background-color: var(--black-color);
+    color: var(--black-form-control-text-color);
+    border-color: var(--black-form-control-border-color);
+
+    @include desktop() {
+      &:hover {
+        background-color: var(--black-form-control-background-event-color);
+      }
+    }
   }
 
   &::-webkit-input-placeholder {
     color: var(--white-color);
   }
+
   &:-moz-placeholder {
     color: var(--white-color);
     opacity: 1;
   }
+
   &::-moz-placeholder {
     color: var(--white-color);
     opacity: 1;
   }
+
   &:-ms-input-placeholder {
     color: var(--white-color);
   }
@@ -38,7 +125,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }
 
@@ -54,8 +141,9 @@ input:-webkit-autofill:active {
 
 .form-label {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   color: var(--white-color);
+  font-size: 14px;
   font-weight: bolder;
 }
 

@@ -1,3 +1,5 @@
+@import 'mixins';
+
 html,
 body {
   margin: 0;
@@ -5,6 +7,21 @@ body {
 }
 
 body {
-  background-color: var(--secondary-color);
+  background-color: var(--background-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
   color: var(--text-color);
+}
+
+main {
+  display: block;
+  background-size: cover cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+
+  &.is-loaded {
+    opacity: 1;
+  }
 }

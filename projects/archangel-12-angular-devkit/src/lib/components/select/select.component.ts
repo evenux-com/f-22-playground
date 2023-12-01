@@ -1,16 +1,31 @@
 import { ViewportRuler } from '@angular/cdk/scrolling';
-import { ChangeDetectorRef, Component, ElementRef, EventEmitter, forwardRef, Input, Output, ViewChild, OnInit, OnChanges, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import {
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  EventEmitter,
+  forwardRef,
+  Input,
+  Output,
+  ViewChild,
+  OnInit,
+  OnChanges,
+  AfterViewInit,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { isPlatformBrowser } from '@angular/common';
+import { ArchangelFormControlDirective } from '../../directives/form-control.directive';
 
 @Component({
   standalone: true,
   selector: 'archangel-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
-  imports: [OverlayModule, FormsModule, ReactiveFormsModule],
+  imports: [OverlayModule, FormsModule, ReactiveFormsModule, ArchangelFormControlDirective],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -30,9 +45,12 @@ export class SelectComponent implements OnInit, AfterViewInit, OnChanges, Contro
   @Input() options: any[] = [];
   @Input() nameField: string = '';
   @Input() valueField: string = '';
+  @Input() background: 'primary' | 'secondary' | 'black' | 'white' | '' = '';
+  @Input() size: 'large' | 'medium' | 'small' = 'medium';
   @Input() isDisabled!: boolean;
 
-  @Output() optionSelected = new EventEmitter<string>();
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
+  @Output() onOptionSelect = new EventEmitter<string>();
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public selectedOption: any = null;
@@ -149,14 +167,14 @@ export class SelectComponent implements OnInit, AfterViewInit, OnChanges, Contro
       setTimeout(() => {
         this.selectedValue = option[this.nameField];
         this.onModelChange(option[this.valueField]);
-        this.optionSelected.emit(option[this.valueField]);
+        this.onOptionSelect.emit(option[this.valueField]);
         this.filterOptions('');
       });
     } else {
       this.selectedOption = null;
       this.selectedValue = '';
       this.onModelChange(null);
-      this.optionSelected.emit('');
+      this.onOptionSelect.emit('');
     }
 
     this.ignoreClose = false;

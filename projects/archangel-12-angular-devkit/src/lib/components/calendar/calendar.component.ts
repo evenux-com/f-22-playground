@@ -12,13 +12,13 @@ export class CalendarComponent implements OnInit {
   @Input() startDayOfWeek: number = 1; // Default to Monday (0 is Sunday, 1 is Monday, and so on)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  weeks: any[][] = [];
+  public weeks: any[][] = [];
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.generateCalendar();
   }
 
-  generateCalendar() {
+  public generateCalendar(): void {
     this.weeks = [];
 
     const firstDayOfMonth = new Date(this.year, this.month - 1, 1);
@@ -59,7 +59,8 @@ export class CalendarComponent implements OnInit {
         }
       }
 
-      this.weeks.push(week);
+      const validDays = week.filter((d) => !!d.number);
+      if (validDays.length > 0) this.weeks.push(week);
     }
   }
 }

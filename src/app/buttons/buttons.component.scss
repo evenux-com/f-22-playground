@@ -1,11 +1,11 @@
-@import "../../../projects/archangel-12-angular-devkit/styles/mixins";
+@import '../../../projects/archangel-12-angular-devkit/styles/mixins';
 
 .wrapper {
   background-color: #2a33417d;
-  padding: 20px;
+  padding: 40px;
   margin-bottom: 40px;
   border-radius: 20px;
-  border: 1px solid var(--background-color);
+  border: 1px solid var(--black-color);
 
   h5 {
     border-bottom: 1px dashed var(--background-color);
@@ -23,12 +23,16 @@
     }
 
     @include desktop() {
-      &.row-full-width button {
-        flex: 1 1 30%;
+      button {
+        flex: 1 1 15%;
       }
     }
 
     @include mobile() {
+      &.row-full-width {
+        display: none;
+      }
+
       button {
         flex: 50%;
       }

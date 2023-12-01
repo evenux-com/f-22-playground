@@ -1,55 +1,53 @@
 <div class="wrapper">
-  <h5 class="mb-3">Dynamic buttons</h5>
+  <h5 class="mb-3">Buttons</h5>
   <div class="row row-full-width">
     @for (button of buttons1; track button) {
-    <button
-      archangelButton
-      [color]="button.color"
-      [rounded]="true"
-      [border]="true"
-      [loading]="button.loading"
-      (click)="simulateAction(button)"
-    >
-      Simulate
-    </button>
+      <button
+        archangelButton
+        [color]="button.color === 'transparent' ? '' : button.color === 'disabled' ? 'primary' : button.color"
+        [rounded]="true"
+        [border]="true"
+        [size]="'large'"
+        [loading]="button.loading"
+        [disabled]="button.disabled"
+        (click)="simulateAction(button)"
+      >
+        {{ button.color === 'disabled' ? 'Disabled' : 'Simulate' }}
+      </button>
     }
   </div>
 
   <div class="row">
     @for (button of buttons2; track button) {
-    <button
-      archangelButton
-      [color]="button.color"
-      [rounded]="true"
-      [border]="true"
-      [loading]="button.loading"
-      (click)="simulateAction(button)"
-    >
-      Simulate
-    </button>
-    } @for (button of buttons3; track button) {
-    <button
-      archangelButton
-      [color]="button.color"
-      [small]="true"
-      [rounded]="true"
-      [border]="true"
-      [loading]="button.loading"
-      (click)="simulateAction(button)"
-    >
-      Simulate
-    </button>
+      <button
+        archangelButton
+        [color]="button.color === 'transparent' ? '' : button.color === 'disabled' ? 'primary' : button.color"
+        [rounded]="true"
+        [border]="true"
+        [size]="'medium'"
+        [loading]="button.loading"
+        [disabled]="button.disabled"
+        (click)="simulateAction(button)"
+      >
+        {{ button.color === 'disabled' ? 'Disabled' : 'Simulate' }}
+      </button>
     }
+  </div>
 
-    <button
-      archangelButton
-      [color]="'primary'"
-      [small]="true"
-      [rounded]="true"
-      [border]="true"
-      [disabled]="true"
-    >
-      Disabled
-    </button>
+  <div class="row">
+    @for (button of buttons3; track button) {
+      <button
+        archangelButton
+        [color]="button.color === 'transparent' ? '' : button.color === 'disabled' ? 'primary' : button.color"
+        [rounded]="true"
+        [border]="true"
+        [size]="'small'"
+        [loading]="button.loading"
+        [disabled]="button.disabled"
+        (click)="simulateAction(button)"
+      >
+        {{ button.color === 'disabled' ? 'Disabled' : 'Simulate' }}
+      </button>
+    }
   </div>
 </div>
