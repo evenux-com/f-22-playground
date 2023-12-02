@@ -44,6 +44,12 @@
       [archangelFormControl] {
         flex: 50%;
       }
+
+      archangel-range-select,
+      archangel-range-picker {
+        flex: 1 1 15;
+        width: 100%;
+      }
     }
   }
 }

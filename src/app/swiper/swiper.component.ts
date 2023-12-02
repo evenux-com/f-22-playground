@@ -22,9 +22,14 @@ export class SwiperDemoComponent {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public smallSwiperConfig: any = {
-    slidesPerView: 4,
+    slidesPerView: 1,
     navigation: {
       enabled: true,
+    },
+    breakpoints: {
+      1380: {
+        slidesPerView: 4,
+      },
     },
   };
 }

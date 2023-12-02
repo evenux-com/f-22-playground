@@ -72,8 +72,6 @@ export class BootstrapService {
               waitTime = maxTime - timeDifference;
             }
 
-            console.log(waitTime);
-
             setTimeout(() => {
               this.renderer2.addClass(mainElement, 'is-loaded');
               if (i === validUrls.length) {
