@@ -92,7 +92,7 @@ export class ArchangelButtonDirective implements OnChanges {
 
         this.el.nativeElement.insertBefore(loaderRef.location.nativeElement, this.el.nativeElement.firstChild);
         const loaderElement = loaderRef.location.nativeElement.querySelector('.loader');
-        loaderElement.classList.add('loader-button-edition');
+        loaderRef.instance.isHidden = true;
         loaderElement.classList.add(`loader-${this.color}`);
 
         setTimeout(() => {
@@ -104,7 +104,6 @@ export class ArchangelButtonDirective implements OnChanges {
   }
 
   private finalizeLoadingSequence(): void {
-    // Fade out loader
     const loaderEl = this.el.nativeElement.querySelector('.loader');
     loaderEl.classList.remove('loader-faded-in');
 

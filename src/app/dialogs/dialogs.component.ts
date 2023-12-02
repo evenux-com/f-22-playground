@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { ArchangelButtonDirective, ConfirmationService, NotificationService } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import {
+  ArchangelButtonDirective,
+  ConfirmationService,
+  NotificationService,
+} from '../../../projects/archangel-12-angular-devkit/src/public-api';
 import { take } from 'rxjs';
 
 @Component({

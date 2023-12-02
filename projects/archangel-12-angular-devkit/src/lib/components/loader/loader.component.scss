@@ -7,10 +7,24 @@
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  transition: all 0.75s ease-in-out;
+  transition: opacity 0.666s ease-in-out;
 
-  &.loader-button-edition {
+  &.page-loader-edition {
+    position: fixed;
+    top: calc(50% - 21px);
+    left: calc(50% - 21px);
+  }
+
+  &.loader-hidden {
     opacity: 0;
+  }
+
+  &.loader-faded-in {
+    opacity: 1;
+  }
+
+  &.loader-animated-opacity {
+    transform: all 0.666s ease-in-out;
   }
 
   &.loader-primary {
@@ -31,10 +45,6 @@
   &.loader-white {
     border-color: var(--white-button-text-color);
     border-bottom-color: transparent;
-  }
-
-  &.loader-faded-in {
-    opacity: 1;
   }
 }
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
 
-import { ConfirmationComponent } from './confirmation.component';
+import { ConfirmationComponent } from '../components/confirmation/confirmation.component';
 
 @Injectable({
   providedIn: 'root',

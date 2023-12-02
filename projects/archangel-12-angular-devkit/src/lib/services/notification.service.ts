@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Dialog } from '@angular/cdk/dialog';
 
-import { NotificationComponent } from './notification.component';
+import { NotificationComponent } from '../components/notification/notification.component';
 
 @Injectable({
   providedIn: 'root',
