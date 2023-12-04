@@ -33,7 +33,7 @@ export class ArchangelRangeSelectComponent implements ControlValueAccessor {
   private onTouched: () => void = () => {};
 
   get textValue(): string {
-    return this.value ? this.value.toString() : '';
+    return this.value !== null ? this.value.toString() : '';
   }
 
   public updateRangeValue(event: Event): void {
