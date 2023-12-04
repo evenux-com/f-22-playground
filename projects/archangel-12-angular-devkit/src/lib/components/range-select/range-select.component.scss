@@ -46,7 +46,7 @@
   --too-many-ticks: Min(1, Max(var(--ticks-count) - var(--maxTicksAllowed), 0));
   --x-step: Max(var(--step), var(--too-many-ticks) * (var(--max) - var(--min)));
   --tickInterval: 100/ ((var(--max) - var(--min)) / var(--step)) * var(--tickEvery, 1);
-  --tickIntervalPerc: calc((100% - var(--thumb-size)) / ((var(--max) - var(--min)) / var(--x-step)) * var(--tickEvery, 1));
+  --tickIntervalPerc: calc((100% - 2px) / ((var(--max) - var(--min)) / var(--x-step)) * var(--tickEvery, 1));
   --value-a: Clamp(var(--min), var(--value, 0), var(--max));
   --value-b: var(--value, 0);
   --completed-a: calc((var(--value-a) - var(--min)) / (var(--max) - var(--min)) * 100);
@@ -75,7 +75,7 @@
   height: Max(var(--track-height), var(--thumb-size));
   background: linear-gradient(to right, var(--ticks-color) var(--ticks-thickness), transparent 1px) repeat-x;
   background-size: var(--tickIntervalPerc) var(--ticks-height);
-  background-position-x: calc(var(--thumb-size) / 2 - var(--ticks-thickness) / 2);
+  background-position-x: 0;
   background-position-y: var(--flip-y, bottom);
   padding-bottom: var(--flip-y, var(--ticks-gap));
   padding-top: calc(var(--flip-y) * var(--ticks-gap));
@@ -174,6 +174,7 @@
   }
 
   & > input {
+    appearance: none;
     -webkit-appearance: none;
     width: 100%;
     height: var(--thumb-size);
