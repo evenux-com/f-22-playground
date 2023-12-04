@@ -54,10 +54,10 @@
     margin-bottom: 10px;
 
     @include mobile() {
-      padding: 6px 0;
+      padding: 12px 0;
 
       .day {
-        @include smallDay();
+        @include smallHeaderDay();
       }
     }
   }

@@ -21,10 +21,6 @@
 
     &.big {
       height: 400px;
-
-      @include mobile() {
-        height: 360px;
-      }
     }
 
     &.small {

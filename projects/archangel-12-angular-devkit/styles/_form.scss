@@ -1,5 +1,5 @@
 .form-control {
-  border: 2px solid var(--background-color);
+  border: var(--form-control-border-width) solid var(--background-color);
   border-radius: 6px;
   display: block;
   padding-top: var(--lg-form-control-y-padding);
