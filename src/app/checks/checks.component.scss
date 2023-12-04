@@ -26,6 +26,10 @@
 
     &.space-between {
       justify-content: space-between;
+
+      @include mobile() {
+        justify-content: initial;
+      }
     }
 
     @include mobile() {
