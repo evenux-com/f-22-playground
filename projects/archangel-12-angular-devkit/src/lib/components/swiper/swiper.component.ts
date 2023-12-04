@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Navigation, Pagination } from 'swiper/modules';
 import Swiper from 'swiper';
 import { CommonModule } from '@angular/common';
@@ -27,6 +27,9 @@ export class ArchangelSwiperComponent implements AfterViewInit {
     },
   };
 
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
+  @Output() onSlideChange: EventEmitter<number> = new EventEmitter<number>();
+
   public swiper!: Swiper;
   public identifier!: string;
 
@@ -54,6 +57,10 @@ export class ArchangelSwiperComponent implements AfterViewInit {
       scrollbar: {
         el: '.swiper-scrollbar',
       },
+    });
+
+    this.swiper.on('slideChange', (swiper) => {
+      this.onSlideChange.emit(swiper.activeIndex);
     });
   }
 

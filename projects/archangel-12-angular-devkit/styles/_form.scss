@@ -34,6 +34,10 @@
     padding-bottom: var(--lg-form-control-y-padding);
   }
 
+  &.form-control-centered {
+    text-align: center;
+  }
+
   &.form-control-bordered {
     border-radius: var(--form-control-border-radius);
     border-width: var(--form-control-border-width);

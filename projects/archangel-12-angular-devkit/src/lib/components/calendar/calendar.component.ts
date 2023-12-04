@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent implements OnInit {
+  @Input() small: boolean = false;
+  @Input() fontSize: number = 60;
   @Input() month: number = 1;
   @Input() year: number = 2024;
   @Input() startDayOfWeek: number = 1; // Default to Monday (0 is Sunday, 1 is Monday, and so on)

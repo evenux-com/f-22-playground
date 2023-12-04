@@ -32,4 +32,8 @@ export class SwiperDemoComponent {
       },
     },
   };
+
+  public debugLog(idx: number): void {
+    console.log(idx);
+  }
 }

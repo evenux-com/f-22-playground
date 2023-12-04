@@ -1,0 +1,60 @@
+<div class="wrapper">
+  <div class="header mb-3">
+    <h5>Inputs</h5>
+  </div>
+
+  <div class="row row-full-width">
+    @for (type of types; track type; let idx = $index) {
+      <input
+        archangelFormControl
+        [disabled]="false"
+        [background]="type === 'transparent' ? '' : type === 'disabled' ? 'primary' : type"
+        [rounded]="true"
+        [border]="true"
+        [size]="'large'"
+        [centered]="true"
+        [placeholder]="type === 'disabled' ? 'Disabled input' : 'Example input'"
+        [disabled]="type === 'disabled'"
+        [(ngModel)]="textInputs[idx]"
+        (ngModelChange)="debugLog(idx)"
+      />
+    }
+  </div>
+
+  <div class="row row-full-width">
+    @for (type of types; track type) {
+      <input
+        archangelFormControl
+        [disabled]="false"
+        [background]="type === 'transparent' ? '' : type === 'disabled' ? 'primary' : type"
+        [rounded]="true"
+        [border]="true"
+        [size]="'medium'"
+        [placeholder]="type === 'disabled' ? 'Disabled input' : 'Example input'"
+        [disabled]="type === 'disabled'"
+      />
+    }
+  </div>
+
+  <div class="row row-full-width">
+    @for (type of types; track type) {
+      <input
+        archangelFormControl
+        [disabled]="false"
+        [background]="type === 'transparent' ? '' : type === 'disabled' ? 'primary' : type"
+        [rounded]="true"
+        [border]="true"
+        [size]="'small'"
+        [placeholder]="type === 'disabled' ? 'Disabled input' : 'Example input'"
+        [disabled]="type === 'disabled'"
+      />
+    }
+  </div>
+
+  <form [formGroup]="form" class="row space-between">
+    <textarea archangelFormControl formControlName="textarea1" background="primary" rows="4" placeholder="Example textarea"></textarea>
+    <textarea archangelFormControl formControlName="textarea2" background="secondary" rows="4" placeholder="Example textarea"></textarea>
+    <textarea archangelFormControl formControlName="textarea3" background="black" rows="4" placeholder="Example textarea"></textarea>
+    <textarea archangelFormControl formControlName="textarea4" background="transparent" rows="4" placeholder="Example textarea"></textarea>
+  </form>
+</div>

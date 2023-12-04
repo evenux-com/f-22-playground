@@ -14,28 +14,7 @@
 
   .row {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 20px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @include desktop() {
-      &.row-full-width button {
-        flex: 1 1 30%;
-      }
-    }
-
-    @include mobile() {
-      button {
-        flex: 50%;
-      }
-    }
-
-    .left {
-      max-width: 70%;
-    }
   }
 }

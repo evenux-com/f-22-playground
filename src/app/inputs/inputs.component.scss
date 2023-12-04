@@ -22,6 +22,10 @@
       margin-bottom: 0;
     }
 
+    &.space-between {
+      justify-content: space-between;
+    }
+
     @include desktop() {
       [archangelFormControl] {
         flex: 1 1 15%;
@@ -37,18 +41,12 @@
     }
 
     @include mobile() {
-      &.row-full-width {
-        display: none;
+      &.row-radios {
+        flex: 1;
       }
 
       [archangelFormControl] {
         flex: 50%;
-      }
-
-      archangel-range-select,
-      archangel-range-picker {
-        flex: 1 1 15;
-        width: 100%;
       }
     }
   }

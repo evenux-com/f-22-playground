@@ -1,8 +1,49 @@
 @import '../../../../styles/mixins';
 
+@mixin smallHeaderDay() {
+  font-size: 0;
+
+  &::first-letter {
+    font-size: 13px;
+    font-weight: bolder;
+  }
+}
+
+@mixin smallDay() {
+  line-height: 40px;
+  max-width: calc(14.2857% - 2px);
+  margin: 2px;
+}
+
+@mixin smallNumber() {
+  line-height: 30px;
+  font-size: 13px;
+  color: var(--white-color);
+}
+
 .calendar {
   display: flex;
   flex-direction: column;
+
+  &.calendar-small {
+    max-width: 576px;
+
+    .header {
+      padding: 6px 0;
+
+      .day {
+        @include smallHeaderDay();
+      }
+    }
+
+    .weeks .day {
+      @include smallDay();
+
+      .number {
+        @include smallNumber();
+      }
+    }
+  }
 
   .header {
     display: flex;
@@ -13,13 +54,10 @@
     margin-bottom: 10px;
 
     @include mobile() {
-      .day {
-        font-size: 0;
+      padding: 6px 0;
 
-        &::first-letter {
-          font-size: 13px;
-          font-weight: bolder;
-        }
+      .day {
+        @include smallDay();
       }
     }
   }
@@ -43,9 +81,7 @@
       color: var(--text-color);
 
       @include mobile() {
-        line-height: 40px;
-        max-width: calc(14.2857% - 2px);
-        margin: 2px;
+        @include smallDay();
       }
 
       &:first-child {
@@ -70,10 +106,8 @@
           opacity: 0.33;
         }
 
-        @include mobile {
-          line-height: 30px;
-          font-size: 13px;
-          color: var(--white-color);
+        @include mobile() {
+          @include smallNumber();
         }
       }
     }

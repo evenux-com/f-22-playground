@@ -51,6 +51,7 @@ export class ArchangelRadiosComponent implements ControlValueAccessor {
 
   public onStateChange(): void {
     this.onValueChange.emit(this.selectedValue);
+    this.onModelChange(this.selectedValue);
     this.onTouched();
   }
 

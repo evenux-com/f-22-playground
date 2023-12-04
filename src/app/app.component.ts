@@ -4,11 +4,14 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { ButtonsDemoComponent } from './buttons/buttons.component';
 import { SelectsDemoComponent } from './selects/selects.component';
-import { FormDemoComponent } from './form/form.component';
+import { InputsDemoComponent } from './inputs/inputs.component';
+import { ChecksDemoComponent } from './checks/checks.component';
+import { RangesDemoComponent } from './ranges/ranges.component';
 import { SwiperDemoComponent } from './swiper/swiper.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { CalendarDemoComponent } from './calendar/calendar.component';
 import { BootstrapService } from '../../projects/archangel-12-angular-devkit/src/public-api';
+import { IconsDemoComponent } from './icons/icons.component';
 
 @Component({
   standalone: true,
@@ -19,10 +22,13 @@ import { BootstrapService } from '../../projects/archangel-12-angular-devkit/src
     HeaderComponent,
     ButtonsDemoComponent,
     SelectsDemoComponent,
-    FormDemoComponent,
+    InputsDemoComponent,
+    ChecksDemoComponent,
+    RangesDemoComponent,
     SwiperDemoComponent,
     DialogsDemoComponent,
     CalendarDemoComponent,
+    IconsDemoComponent,
   ],
   providers: [BootstrapService],
   templateUrl: './app.component.html',

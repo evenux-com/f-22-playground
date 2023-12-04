@@ -16,13 +16,12 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
   ],
 })
 export class ArchangelCheckboxComponent implements ControlValueAccessor {
+  @Input() enabled: boolean = false;
   @Input() type: 'default' | 'rounded' | 'switch' = 'default';
   @Input() size: 'large' | 'medium' | 'small' = 'medium';
 
   // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onStateChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  public enabled: boolean = false;
 
   public onModelChange: (value: unknown) => void = () => {};
 
@@ -42,6 +41,7 @@ export class ArchangelCheckboxComponent implements ControlValueAccessor {
 
   public onStateToggle(): void {
     this.onStateChange.emit(this.enabled);
+    this.onModelChange(this.enabled);
     this.onTouched();
   }
 }

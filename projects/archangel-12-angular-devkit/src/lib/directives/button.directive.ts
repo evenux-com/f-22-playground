@@ -53,7 +53,7 @@ export class ArchangelButtonDirective implements OnChanges {
   constructor(
     private readonly el: ElementRef,
     private readonly vcr: ViewContainerRef,
-    @Inject(PLATFORM_ID) private platformId: NonNullable<unknown>,
+    @Inject(PLATFORM_ID) private readonly platformId: NonNullable<unknown>,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }

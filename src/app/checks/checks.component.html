@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="header mb-3">
+    <h5>Checks</h5>
+  </div>
+
+  <div class="row space-between">
+    <div class="row space-between">
+      <archangel-checkbox [(ngModel)]="checkbox1" (ngModelChange)="debugLog(checkbox1)" type="default" color="primary" size="large">
+        Large
+      </archangel-checkbox>
+      <archangel-checkbox [(ngModel)]="checkbox2" (ngModelChange)="debugLog(checkbox2)" type="default" color="secondary" size="medium">
+        Medium
+      </archangel-checkbox>
+      <archangel-checkbox [(ngModel)]="checkbox3" (ngModelChange)="debugLog(checkbox3)" type="default" color="black" size="small">
+        Small
+      </archangel-checkbox>
+    </div>
+
+    <form [formGroup]="form" class="row space-between">
+      <archangel-checkbox formControlName="checkbox1" type="rounded" color="primary" size="large">Large</archangel-checkbox>
+      <archangel-checkbox formControlName="checkbox2" type="rounded" color="secondary" size="medium">Medium</archangel-checkbox>
+      <archangel-checkbox formControlName="checkbox3" type="rounded" color="black" size="small">Small</archangel-checkbox>
+    </form>
+
+    <form [formGroup]="form" class="row space-between">
+      <archangel-checkbox formControlName="switch1" type="switch" color="primary" size="large">Large</archangel-checkbox>
+      <archangel-checkbox formControlName="switch2" type="switch" color="secondary" size="medium">Medium</archangel-checkbox>
+      <archangel-checkbox formControlName="switch3" type="switch" color="black" size="small">Small</archangel-checkbox>
+    </form>
+  </div>
+
+  <form [formGroup]="form" class="row row-radios space-between">
+    <archangel-radios
+      [(ngModel)]="radio1"
+      [ngModelOptions]="{ standalone: true }"
+      (ngModelChange)="debugLog(radio1)"
+      [options]="radioOptionsLg"
+      [size]="'large'"
+    />
+    <archangel-radios formControlName="radio2" [options]="radioOptionsMd" [size]="'medium'" />
+    <archangel-radios [options]="radioOptionsSm" [size]="'small'" />
+  </form>
+</div>

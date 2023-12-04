@@ -1,7 +1,7 @@
 <div class="wrapper">
   <h5 class="mb-3">Swiper</h5>
 
-  <archangel-swiper class="big" [config]="bigSwiperConfig">
+  <archangel-swiper class="big" [config]="bigSwiperConfig" (onSlideChange)="debugLog($event)">
     @for (x of [].constructor(5); track x; let idx = $index) {
       <div class="swiper-slide">
         <div class="slide-content">Test slide {{ idx + 1 }}</div>

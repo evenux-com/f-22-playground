@@ -45,7 +45,7 @@ export class SelectComponent implements OnInit, AfterViewInit, OnChanges, Contro
   @Input() options: any[] = [];
   @Input() nameField: string = '';
   @Input() valueField: string = '';
-  @Input() background: 'primary' | 'secondary' | 'black' | 'white' | '' = '';
+  @Input() background: 'primary' | 'secondary' | 'black' | 'white' | 'transparent' = 'primary';
   @Input() size: 'large' | 'medium' | 'small' = 'medium';
   @Input() isDisabled!: boolean;
 
@@ -69,7 +69,7 @@ export class SelectComponent implements OnInit, AfterViewInit, OnChanges, Contro
   constructor(
     protected readonly viewportRuler: ViewportRuler,
     protected readonly changeDetectorRef: ChangeDetectorRef,
-    @Inject(PLATFORM_ID) private platformId: NonNullable<unknown>,
+    @Inject(PLATFORM_ID) private readonly platformId: NonNullable<unknown>,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
     this.viewportRuler

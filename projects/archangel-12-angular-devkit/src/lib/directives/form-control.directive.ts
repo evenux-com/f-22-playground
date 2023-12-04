@@ -5,8 +5,9 @@ import { Directive, ElementRef, HostBinding, Input, OnInit, Renderer2 } from '@a
   selector: '[archangelFormControl]',
 })
 export class ArchangelFormControlDirective implements OnInit {
-  @Input() background: 'primary' | 'secondary' | 'white' | 'black' | '' = '';
+  @Input() background: 'primary' | 'secondary' | 'white' | 'black' | 'transparent' = 'primary';
   @Input() size: 'large' | 'medium' | 'small' = 'medium';
+  @Input() centered: boolean = false;
   @Input() border: boolean = false;
   @Input() rounded: boolean = false;
   @Input() fullWidth: boolean = false;
@@ -19,6 +20,10 @@ export class ArchangelFormControlDirective implements OnInit {
   @HostBinding('class') get classes(): string {
     const classes = ['form-control'];
     classes.push(`form-control-${this.size}`);
+
+    if (this.centered) {
+      classes.push('form-control-centered');
+    }
 
     if (this.border) {
       classes.push('form-control-bordered');

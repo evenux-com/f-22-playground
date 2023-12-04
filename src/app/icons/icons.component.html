@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <div class="header mb-3">
+    <h5>Icons</h5>
+  </div>
+
+  <div class="row">
+    @for (icon of icons; track icon; let idx = $index) {
+      <i class="icon-{{ icon }}"></i>
+    }
+  </div>
+</div>

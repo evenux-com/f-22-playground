@@ -33,12 +33,13 @@ export class ArchangelRangeSelectComponent implements ControlValueAccessor {
   private onTouched: () => void = () => {};
 
   get textValue(): string {
-    return this.value.toString();
+    return this.value ? this.value.toString() : '';
   }
 
   public updateRangeValue(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.value = +target.value;
+    this.onStateChange();
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -56,6 +57,7 @@ export class ArchangelRangeSelectComponent implements ControlValueAccessor {
 
   public onStateChange(): void {
     this.onValueChange.emit(this.value);
+    this.onModelChange(this.value);
     this.onTouched();
   }
 }

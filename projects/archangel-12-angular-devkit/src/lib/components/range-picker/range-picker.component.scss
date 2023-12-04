@@ -1,4 +1,5 @@
 // Copyright to vsync @ https://codepen.io/vsync
+// Edited by Aeternum Anonymi.
 
 .range-picker {
   --thumb-size: 25px;
@@ -143,13 +144,12 @@
   }
 
   &__progress {
-    --start-end: calc(var(--thumb-size) / 2);
     --clip-end: calc(100% - (var(--cb)) * 1%);
     --clip-start: calc(var(--ca) * 1%);
     --clip: inset(-20px var(--clip-end) -20px var(--clip-start));
     position: absolute;
-    left: var(--start-end);
-    right: var(--start-end);
+    left: 0;
+    right: 0;
     top: calc(var(--ticks-gap) * var(--flip-y, 0) + var(--thumb-size) / 2 - var(--track-height) / 2);
     height: calc(var(--track-height));
     background: var(--progress-background, #eee);

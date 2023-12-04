@@ -1,4 +1,4 @@
-<div class="calendar">
+<div class="calendar" [class.calendar-small]="small">
   <div class="header">
     <div class="day">Mon</div>
     <div class="day">Tue</div>
@@ -9,16 +9,16 @@
     <div class="day">Sun</div>
   </div>
   @for (week of weeks; track week) {
-  <div class="weeks">
-    @for (day of week; track day) {
-    <div class="day" [class.disabled]="!day">
-      @if (day) {
-      <span class="number" [class.light]="day.month !== month">
-        {{ day.number }}
-      </span>
+    <div class="weeks">
+      @for (day of week; track day) {
+        <div class="day" [class.disabled]="!day">
+          @if (day) {
+            <span class="number" [class.light]="day.month !== month">
+              {{ day.number }}
+            </span>
+          }
+        </div>
       }
     </div>
-    }
-  </div>
   }
 </div>
