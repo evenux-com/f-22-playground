@@ -1,22 +1,28 @@
-import { ComponentRef, Injectable, Renderer2, ViewContainerRef } from '@angular/core';
+import { ComponentRef, Injectable, ViewContainerRef, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
 import { forkJoin, fromEvent, take } from 'rxjs';
 import { LoaderComponent } from '../../public-api';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BootstrapService {
+  public isBrowser: boolean = false;
   private loaderRef!: ComponentRef<LoaderComponent>;
 
   constructor(
-    private readonly renderer2: Renderer2,
     private readonly vcr: ViewContainerRef,
-  ) {}
+    @Inject(PLATFORM_ID) platformId: any,
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId); 
+  }
 
   public async loadApplication(): Promise<void> {
-    const startTime = new Date().getTime();
-    this.initializeLoader();
-    await this.loadBackground(startTime);
+    if (this.isBrowser) {
+      const startTime = new Date().getTime();
+      this.initializeLoader();
+      await this.loadBackground(startTime);
+    }
   }
 
   private initializeLoader(): void {
@@ -28,6 +34,7 @@ export class BootstrapService {
   private async loadBackground(startTime: number): Promise<void> {
     const element = document.querySelector(':root') || false;
     if (!element) return;
+    
     const computedStyle = window.getComputedStyle(element);
     const backgroundVarValue = computedStyle.getPropertyValue('--background-image');
     const urlRegex = /\((.*?)\)/g;
@@ -56,8 +63,9 @@ export class BootstrapService {
         forkJoin(observables)
           .pipe(take(1))
           .subscribe(() => {
-            const mainElement = document.querySelector('main');
-            this.renderer2.setStyle(mainElement, 'background-image', backgroundVarValue);
+            const mainElement = document.querySelector('main'); if (!mainElement) return;
+            mainElement.style.backgroundImage = `url(${backgroundVarValue}`;
+            // this.renderer2.setStyle(mainElement, 'background-image', backgroundVarValue);
             const endTime = new Date().getTime();
             const timeDifference = endTime - startTime;
 
@@ -73,7 +81,9 @@ export class BootstrapService {
             }
 
             setTimeout(() => {
-              this.renderer2.addClass(mainElement, 'is-loaded');
+              // this.renderer2.addClass(mainElement, 'is-loaded');
+              mainElement.classList.add('is-loaded');
+
               if (i === validUrls.length) {
                 this.loaderRef.instance.isHidden = true;
                 setTimeout(() => {

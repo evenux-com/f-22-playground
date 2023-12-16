@@ -1,6 +1,6 @@
 {
   "name": "@aeternum.anonymi/archangel-12-angular-devkit",
-  "version": "0.2.2",
+  "version": "0.3.4",
   "peerDependencies": {
     "@angular/common": "^17.0.0",
     "@angular/core": "^17.0.0",

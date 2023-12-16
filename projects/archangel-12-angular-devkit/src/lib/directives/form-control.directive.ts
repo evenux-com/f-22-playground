@@ -1,4 +1,5 @@
-import { Directive, ElementRef, HostBinding, Input, OnInit, Renderer2 } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Directive, ElementRef, HostBinding, Inject, Input, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 
 @Directive({
   standalone: true,
@@ -44,10 +45,15 @@ export class ArchangelFormControlDirective implements OnInit {
     return classes.join(' ');
   }
 
+  private isBrowser: boolean = false;
+
   constructor(
     private readonly el: ElementRef,
-    private readonly renderer2: Renderer2,
-  ) {}
+      private readonly renderer2: Renderer2,
+    @Inject(PLATFORM_ID) private readonly platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   public ngOnInit(): void {
     if (this.isDisabled) {
