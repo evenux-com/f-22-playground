@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "archangel-12-playground": {
+    "f-22-playground": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,10 +23,7 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-          ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
             "scripts": []
           },
@@ -58,10 +55,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "archangel-12-playground:build:production"
+              "buildTarget": "f-22-playground:build:production"
             },
             "development": {
-              "buildTarget": "archangel-12-playground:build:development"
+              "buildTarget": "f-22-playground:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +66,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "archangel-12-playground:build"
+            "buildTarget": "f-22-playground:build"
           }
         },
         "test": {
@@ -85,23 +82,23 @@
         }
       }
     },
-    "archangel-12-angular-devkit": {
+    "f-22-angular-devkit": {
       "projectType": "library",
-      "root": "projects/archangel-12-angular-devkit",
-      "sourceRoot": "projects/archangel-12-angular-devkit/src",
+      "root": "projects/f-22-angular-devkit",
+      "sourceRoot": "projects/f-22-angular-devkit/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/archangel-12-angular-devkit/ng-package.json"
+            "project": "projects/f-22-angular-devkit/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/archangel-12-angular-devkit/tsconfig.lib.prod.json"
+              "tsConfig": "projects/f-22-angular-devkit/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/archangel-12-angular-devkit/tsconfig.lib.json"
+              "tsConfig": "projects/f-22-angular-devkit/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -109,7 +106,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/archangel-12-angular-devkit/tsconfig.spec.json",
+            "tsConfig": "projects/f-22-angular-devkit/tsconfig.spec.json",
             "polyfills": ["zone.js", "zone.js/testing"]
           }
         }

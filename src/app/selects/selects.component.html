@@ -1,12 +1,12 @@
 <div class="wrapper">
   <div class="header mb-3">
     <h5>Selects</h5>
-    <button archangelButton color="primary" [size]="'small'" [rounded]="true" [border]="true" (click)="shuffleOptions()">Shuffle</button>
+    <button f-22Button color="primary" [size]="'small'" [rounded]="true" [border]="true" (click)="shuffleOptions()">Shuffle</button>
   </div>
   <div class="row">
     <div class="select">
       <label class="form-label">Select a value:</label>
-      <archangel-select
+      <f-22-select
         class="mb-2"
         background="primary"
         [options]="options1"
@@ -17,7 +17,7 @@
         [hasSearch]="true"
         placeholder="Select an option..."
         searchPlaceholder="Search for an option..."
-      ></archangel-select>
+      ></f-22-select>
       @if (selectedOption1 && selectedOption1Value) {
         <p>Selected value: {{ selectedOption1.label }} (value = {{ selectedOption1Value }})</p>
       } @else {
@@ -27,7 +27,7 @@
 
     <div class="select">
       <label class="form-label">Select a value:</label>
-      <archangel-select
+      <f-22-select
         class="mb-2"
         background="secondary"
         [options]="options2"
@@ -37,7 +37,7 @@
         (onOptionSelect)="onSelectOption2($event)"
         placeholder="Select an option..."
         searchPlaceholder="Search for an option..."
-      ></archangel-select>
+      ></f-22-select>
       @if (selectedOption2 && selectedOption2Value) {
         <p>Selected value: {{ selectedOption2?.label }} (value = {{ selectedOption2Value }})</p>
       } @else {
@@ -47,7 +47,7 @@
 
     <form class="select" [formGroup]="form">
       <label class="form-label">Select a value:</label>
-      <archangel-select
+      <f-22-select
         class="mb-2"
         [options]="options3"
         valueField="value"
@@ -55,7 +55,7 @@
         formControlName="selection"
         [hasSearch]="false"
         placeholder="Select an option..."
-      ></archangel-select>
+      ></f-22-select>
       @if (selectedOption3 !== undefined && selectedOption3Value !== undefined) {
         <p>Selected value: {{ selectedOption3?.label }} (value = {{ selectedOption3Value }})</p>
       } @else {
@@ -65,7 +65,7 @@
 
     <div class="select">
       <label class="form-label">Select a value:</label>
-      <archangel-select class="mb-2" background="primary" placeholder="Select disabled" [isDisabled]="true"></archangel-select>
+      <f-22-select class="mb-2" background="primary" placeholder="Select disabled" [isDisabled]="true"></f-22-select>
       <p>Selection disabled...</p>
     </div>
   </div>

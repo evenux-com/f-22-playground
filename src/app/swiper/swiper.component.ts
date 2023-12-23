@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ArchangelSwiperComponent } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { F22SwiperComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-swiper-demo',
-  imports: [ArchangelSwiperComponent],
+  imports: [F22SwiperComponent],
   templateUrl: './swiper.component.html',
   styleUrl: './swiper.component.scss',
 })

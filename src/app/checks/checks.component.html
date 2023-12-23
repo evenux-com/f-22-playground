@@ -5,39 +5,39 @@
 
   <div class="row space-between">
     <div class="row space-between">
-      <archangel-checkbox [(ngModel)]="checkbox1" (ngModelChange)="debugLog(checkbox1)" type="default" color="primary" size="large">
+      <f-22-checkbox [(ngModel)]="checkbox1" (ngModelChange)="debugLog(checkbox1)" type="default" color="primary" size="large">
         Large
-      </archangel-checkbox>
-      <archangel-checkbox [(ngModel)]="checkbox2" (ngModelChange)="debugLog(checkbox2)" type="default" color="secondary" size="medium">
+      </f-22-checkbox>
+      <f-22-checkbox [(ngModel)]="checkbox2" (ngModelChange)="debugLog(checkbox2)" type="default" color="secondary" size="medium">
         Medium
-      </archangel-checkbox>
-      <archangel-checkbox [(ngModel)]="checkbox3" (ngModelChange)="debugLog(checkbox3)" type="default" color="black" size="small">
+      </f-22-checkbox>
+      <f-22-checkbox [(ngModel)]="checkbox3" (ngModelChange)="debugLog(checkbox3)" type="default" color="black" size="small">
         Small
-      </archangel-checkbox>
+      </f-22-checkbox>
     </div>
 
     <form [formGroup]="form" class="row space-between">
-      <archangel-checkbox formControlName="checkbox1" type="rounded" color="primary" size="large">Large</archangel-checkbox>
-      <archangel-checkbox formControlName="checkbox2" type="rounded" color="secondary" size="medium">Medium</archangel-checkbox>
-      <archangel-checkbox formControlName="checkbox3" type="rounded" color="black" size="small">Small</archangel-checkbox>
+      <f-22-checkbox formControlName="checkbox1" type="rounded" color="primary" size="large">Large</f-22-checkbox>
+      <f-22-checkbox formControlName="checkbox2" type="rounded" color="secondary" size="medium">Medium</f-22-checkbox>
+      <f-22-checkbox formControlName="checkbox3" type="rounded" color="black" size="small">Small</f-22-checkbox>
     </form>
 
     <form [formGroup]="form" class="row space-between">
-      <archangel-checkbox formControlName="switch1" type="switch" color="primary" size="large">Large</archangel-checkbox>
-      <archangel-checkbox formControlName="switch2" type="switch" color="secondary" size="medium">Medium</archangel-checkbox>
-      <archangel-checkbox formControlName="switch3" type="switch" color="black" size="small">Small</archangel-checkbox>
+      <f-22-checkbox formControlName="switch1" type="switch" color="primary" size="large">Large</f-22-checkbox>
+      <f-22-checkbox formControlName="switch2" type="switch" color="secondary" size="medium">Medium</f-22-checkbox>
+      <f-22-checkbox formControlName="switch3" type="switch" color="black" size="small">Small</f-22-checkbox>
     </form>
   </div>
 
   <form [formGroup]="form" class="row row-radios space-between">
-    <archangel-radios
+    <f-22-radios
       [(ngModel)]="radio1"
       [ngModelOptions]="{ standalone: true }"
       (ngModelChange)="debugLog(radio1)"
       [options]="radioOptionsLg"
       [size]="'large'"
     />
-    <archangel-radios formControlName="radio2" [options]="radioOptionsMd" [size]="'medium'" />
-    <archangel-radios [options]="radioOptionsSm" [size]="'small'" />
+    <f-22-radios formControlName="radio2" [options]="radioOptionsMd" [size]="'medium'" />
+    <f-22-radios [options]="radioOptionsSm" [size]="'small'" />
   </form>
 </div>

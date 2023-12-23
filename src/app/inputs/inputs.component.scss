@@ -1,4 +1,4 @@
-@import '../../../projects/archangel-12-angular-devkit/styles/mixins';
+@import '../../../projects/f-22-angular-devkit/styles/mixins';
 
 .wrapper {
   background-color: #2a33417d;
@@ -27,15 +27,15 @@
     }
 
     @include desktop() {
-      [archangelFormControl] {
+      [f-22FormControl] {
         flex: 1 1 15%;
       }
 
-      archangel-range-select {
+      f-22-range-select {
         flex: 1 1 30%;
       }
 
-      archangel-range-picker {
+      f-22-range-picker {
         flex: 1 1 30%;
       }
     }
@@ -45,7 +45,7 @@
         flex: 1;
       }
 
-      [archangelFormControl] {
+      [f-22FormControl] {
         flex: 50%;
       }
     }

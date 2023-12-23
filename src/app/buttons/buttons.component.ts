@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ArchangelButtonDirective, LoaderComponent } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { F22ButtonDirective, LoaderComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-buttons-demo',
-  imports: [ArchangelButtonDirective, LoaderComponent],
+  imports: [F22ButtonDirective, LoaderComponent],
   templateUrl: './buttons.component.html',
   styleUrl: './buttons.component.scss',
 })

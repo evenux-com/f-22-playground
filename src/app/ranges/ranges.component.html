@@ -4,19 +4,19 @@
   </div>
 
   <form [formGroup]="form" class="row mb-5">
-    <archangel-range-select
+    <f-22-range-select
       [(ngModel)]="rangeSelect1"
       [ngModelOptions]="{ standalone: true }"
       (ngModelChange)="debugLog(rangeSelect1)"
       [size]="'large'"
       [value]="0"
     />
-    <archangel-range-select formControlName="rangeSelect2" [size]="'medium'" [value]="0" />
-    <archangel-range-select [size]="'small'" [value]="0" />
+    <f-22-range-select formControlName="rangeSelect2" [size]="'medium'" [value]="0" />
+    <f-22-range-select [size]="'small'" [value]="0" />
   </form>
 
   <form [formGroup]="form" class="row">
-    <archangel-range-picker
+    <f-22-range-picker
       [(ngModel)]="rangePicker1"
       [ngModelOptions]="{ standalone: true }"
       (ngModelChange)="debugLog(rangePicker1)"
@@ -24,7 +24,7 @@
       [valueA]="0"
       [valueB]="50"
     />
-    <archangel-range-picker formControlName="rangePicker2" [size]="'medium'" [valueA]="0" [valueB]="75" />
-    <archangel-range-picker [size]="'small'" [valueA]="0" [valueB]="100" />
+    <f-22-range-picker formControlName="rangePicker2" [size]="'medium'" [valueA]="0" [valueB]="75" />
+    <f-22-range-picker [size]="'small'" [valueA]="0" [valueB]="100" />
   </form>
 </div>

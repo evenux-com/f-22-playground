@@ -1,0 +1,93 @@
+:root {
+  // -------------------- GENERAL -------------------- //
+
+  // General
+  --font-family: 'Cutive Mono', monospace;
+  --font-size: 14px;
+  --minimum-page-loading-time: 1000;
+  --background-color: #262d37;
+  --background-image: url('/assets/images/default-background.jpg'), url('/f-22-playground/assets/images/default-background.jpg');
+
+  // Breakpoints
+  --mobile-max-width: 576px;
+  --desktop-max-width: 1320px;
+  --container-padding: 20px;
+
+  // Colors
+  --primary-color: #222a37;
+  --secondary-color: #2a3341;
+  --black-color: #151921;
+  --white-color: #ffffff;
+  --background-color: #151921;
+  --text-color: #ffffff;
+
+  // Text
+  --font-size: 14px;
+  --h1-font-size: 40px;
+  --h2-font-size: 36px;
+  --h3-font-size: 32px;
+  --h4-font-size: 28px;
+  --h5-font-size: 24px;
+
+  // -------------------- BUTTONS -------------------- //
+
+  // General
+  --button-border-width: 1px;
+  --button-border-radius: 8px;
+  --lg-button-x-padding: 36px;
+  --lg-button-y-padding: 18px;
+  --md-button-x-padding: 24px;
+  --md-button-y-padding: 12px;
+  --sm-button-x-padding: 12px;
+  --sm-button-y-padding: 6px;
+
+  // Text
+  --primary-button-text-color: #ffffff;
+  --secondary-button-text-color: #ffffff;
+  --black-button-text-color: #ffffff;
+  --white-button-text-color: #151921;
+
+  // Hover event
+  --primary-button-background-event-color: #2f436e;
+  --secondary-button-background-event-color: #2f436e;
+  --black-button-background-event-color: #2f436e;
+  --white-button-background-event-color: #2f436e;
+
+  // Border color
+  --transparent-button-border-color: #151921;
+  --primary-button-border-color: #151921;
+  --secondary-button-border-color: #151921;
+  --black-button-border-color: #151921;
+  --white-button-border-color: #151921;
+
+  // -------------------- FORM CONTROL -------------------- //
+
+  // General
+  --form-control-border-width: 1px;
+  --form-control-border-radius: 8px;
+  --lg-form-control-x-padding: 14px;
+  --lg-form-control-y-padding: 18px;
+  --md-form-control-x-padding: 14px;
+  --md-form-control-y-padding: 12px;
+  --sm-form-control-x-padding: 14px;
+  --sm-form-control-y-padding: 6px;
+
+  // Text
+  --primary-form-control-text-color: #ffffff;
+  --secondary-form-control-text-color: #ffffff;
+  --black-form-control-text-color: #ffffff;
+  --white-form-control-text-color: #151921;
+
+  // Hover event
+  --primary-form-control-background-event-color: #2f436e;
+  --secondary-form-control-background-event-color: #2f436e;
+  --black-form-control-background-event-color: #2f436e;
+  --white-form-control-background-event-color: #2f436e;
+
+  // Border color
+  --transparent-form-control-border-color: #151921;
+  --primary-form-control-border-color: #151921;
+  --secondary-form-control-border-color: #151921;
+  --black-form-control-border-color: #151921;
+  --white-form-control-border-color: #151921;
+}

@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
-import {
-  ArchangelButtonDirective,
-  ConfirmationService,
-  NotificationService,
-} from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { F22ButtonDirective, ConfirmationService, NotificationService } from '../../../projects/f-22-angular-devkit/src/public-api';
 import { take } from 'rxjs';
 
 @Component({
   standalone: true,
   selector: 'app-dialogs-demo',
-  imports: [ArchangelButtonDirective],
+  imports: [F22ButtonDirective],
   providers: [ConfirmationService, NotificationService],
   templateUrl: './dialogs.component.html',
   styleUrl: './dialogs.component.scss',

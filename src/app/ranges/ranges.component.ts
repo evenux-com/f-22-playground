@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ArchangelRangePickerComponent, ArchangelRangeSelectComponent } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { F22RangePickerComponent, F22RangeSelectComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-ranges-demo',
-  imports: [FormsModule, ReactiveFormsModule, ArchangelRangeSelectComponent, ArchangelRangePickerComponent],
+  imports: [FormsModule, ReactiveFormsModule, F22RangeSelectComponent, F22RangePickerComponent],
   templateUrl: './ranges.component.html',
   styleUrl: './ranges.component.scss',
 })

@@ -10,7 +10,7 @@ import { RangesDemoComponent } from './ranges/ranges.component';
 import { SwiperDemoComponent } from './swiper/swiper.component';
 import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { CalendarDemoComponent } from './calendar/calendar.component';
-import { BootstrapService } from '../../projects/archangel-12-angular-devkit/src/public-api';
+import { BootstrapService } from '../../projects/f-22-angular-devkit/src/public-api';
 import { IconsDemoComponent } from './icons/icons.component';
 
 @Component({

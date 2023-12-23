@@ -6,7 +6,7 @@
   <div class="row row-full-width">
     @for (type of types; track type; let idx = $index) {
       <input
-        archangelFormControl
+        f-22FormControl
         [disabled]="false"
         [background]="type === 'transparent' ? '' : type === 'disabled' ? 'primary' : type"
         [rounded]="true"
@@ -24,7 +24,7 @@
   <div class="row row-full-width">
     @for (type of types; track type) {
       <input
-        archangelFormControl
+        f-22FormControl
         [disabled]="false"
         [background]="type === 'transparent' ? '' : type === 'disabled' ? 'primary' : type"
         [rounded]="true"
@@ -39,7 +39,7 @@
   <div class="row row-full-width">
     @for (type of types; track type) {
       <input
-        archangelFormControl
+        f-22FormControl
         [disabled]="false"
         [background]="type === 'transparent' ? '' : type === 'disabled' ? 'primary' : type"
         [rounded]="true"
@@ -52,9 +52,9 @@
   </div>
 
   <form [formGroup]="form" class="row space-between">
-    <textarea archangelFormControl formControlName="textarea1" background="primary" rows="4" placeholder="Example textarea"></textarea>
-    <textarea archangelFormControl formControlName="textarea2" background="secondary" rows="4" placeholder="Example textarea"></textarea>
-    <textarea archangelFormControl formControlName="textarea3" background="black" rows="4" placeholder="Example textarea"></textarea>
-    <textarea archangelFormControl formControlName="textarea4" background="transparent" rows="4" placeholder="Example textarea"></textarea>
+    <textarea f-22FormControl formControlName="textarea1" background="primary" rows="4" placeholder="Example textarea"></textarea>
+    <textarea f-22FormControl formControlName="textarea2" background="secondary" rows="4" placeholder="Example textarea"></textarea>
+    <textarea f-22FormControl formControlName="textarea3" background="black" rows="4" placeholder="Example textarea"></textarea>
+    <textarea f-22FormControl formControlName="textarea4" background="transparent" rows="4" placeholder="Example textarea"></textarea>
   </form>
 </div>

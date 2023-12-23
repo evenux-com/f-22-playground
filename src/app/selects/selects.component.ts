@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  SelectComponent,
-  ArchangelButtonDirective,
-  NotificationService,
-} from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { SelectComponent, F22ButtonDirective, NotificationService } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-selects-demo',
-  imports: [FormsModule, ReactiveFormsModule, SelectComponent, ArchangelButtonDirective],
+  imports: [FormsModule, ReactiveFormsModule, SelectComponent, F22ButtonDirective],
   providers: [NotificationService],
   templateUrl: './selects.component.html',
   styleUrl: './selects.component.scss',

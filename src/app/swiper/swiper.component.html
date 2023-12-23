@@ -1,19 +1,19 @@
 <div class="wrapper">
   <h5 class="mb-3">Swiper</h5>
 
-  <archangel-swiper class="big" [config]="bigSwiperConfig" (onSlideChange)="debugLog($event)">
+  <f-22-swiper class="big" [config]="bigSwiperConfig" (onSlideChange)="debugLog($event)">
     @for (x of [].constructor(5); track x; let idx = $index) {
       <div class="swiper-slide">
         <div class="slide-content">Test slide {{ idx + 1 }}</div>
       </div>
     }
-  </archangel-swiper>
+  </f-22-swiper>
 
-  <archangel-swiper class="small" [config]="smallSwiperConfig">
+  <f-22-swiper class="small" [config]="smallSwiperConfig">
     @for (x of [].constructor(12); track x; let idx = $index) {
       <div class="swiper-slide">
         <div class="slide-content">Test slide {{ idx + 1 }}</div>
       </div>
     }
-  </archangel-swiper>
+  </f-22-swiper>
 </div>

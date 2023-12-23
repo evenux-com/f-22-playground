@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalendarComponent } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { CalendarComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,

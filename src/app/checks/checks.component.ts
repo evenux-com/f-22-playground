@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  ArchangelCheckboxComponent,
-  ArchangelFormControlDirective,
-  ArchangelRadiosComponent,
-} from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { F22CheckboxComponent, F22FormControlDirective, F22RadiosComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-checks-demo',
-  imports: [FormsModule, ReactiveFormsModule, ArchangelFormControlDirective, ArchangelCheckboxComponent, ArchangelRadiosComponent],
+  imports: [FormsModule, ReactiveFormsModule, F22FormControlDirective, F22CheckboxComponent, F22RadiosComponent],
   templateUrl: './checks.component.html',
   styleUrl: './checks.component.scss',
 })

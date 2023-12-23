@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ArchangelFormControlDirective } from '../../../projects/archangel-12-angular-devkit/src/public-api';
+import { F22FormControlDirective } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-inputs-demo',
-  imports: [FormsModule, ReactiveFormsModule, ArchangelFormControlDirective],
+  imports: [FormsModule, ReactiveFormsModule, F22FormControlDirective],
   templateUrl: './inputs.component.html',
   styleUrl: './inputs.component.scss',
 })

@@ -1,5 +1,5 @@
 {
-  "name": "archangel-12-playground",
+  "name": "f-22-playground",
   "version": "0.2.3",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "lint": "eslint --ext .ts,.html .",
-    "format": "prettier --write 'src/*.ts' 'src/app/*.ts' 'src/app/*/*.ts' 'projects/archangel-12-angular-devkit/src/*.ts' 'projects/archangel-12-angular-devkit/src/lib/*/*.ts'",
+    "format": "prettier --write 'src/*.ts' 'src/app/*.ts' 'src/app/*/*.ts' 'projects/f-22-angular-devkit/src/*.ts' 'projects/f-22-angular-devkit/src/lib/*/*.ts'",
     "lint-and-format": "npm run lint && npm run format"
   },
   "husky": {
@@ -17,7 +17,7 @@
   },
   "private": false,
   "dependencies": {
-    "@aeternum.anonymi/archangel-12-angular-devkit": "^0.3.5",
+    "@aeternum.anonymi/f-22-angular-devkit": "^0.3.5",
     "@angular/animations": "^17.0.0",
     "@angular/cdk": "^17.0.1",
     "@angular/common": "^17.0.0",
