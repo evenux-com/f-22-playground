@@ -1,4 +1,4 @@
-import { ComponentRef, Injectable, ViewContainerRef, Inject, PLATFORM_ID, ChangeDetectorRef } from '@angular/core';
+import { ComponentRef, Injectable, ViewContainerRef, Inject, PLATFORM_ID } from '@angular/core';
 import { forkJoin, fromEvent, take } from 'rxjs';
 import { LoaderComponent } from '../../public-api';
 import { isPlatformBrowser } from '@angular/common';
@@ -14,7 +14,7 @@ export class BootstrapService {
     private readonly vcr: ViewContainerRef,
     @Inject(PLATFORM_ID) platformId: any,
   ) {
-    this.isBrowser = isPlatformBrowser(platformId); 
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   public async loadApplication(): Promise<void> {
@@ -28,13 +28,14 @@ export class BootstrapService {
   private initializeLoader(): void {
     this.loaderRef = this.vcr.createComponent(LoaderComponent);
     this.loaderRef.instance.isPageLoader = true;
+    this.loaderRef.instance.loading = true;
     this.loaderRef.instance.size = 42;
   }
 
   private async loadBackground(startTime: number): Promise<void> {
     const element = document.querySelector(':root') || false;
     if (!element) return;
-    
+
     const computedStyle = window.getComputedStyle(element);
     const backgroundVarValue = computedStyle.getPropertyValue('--background-image');
     const urlRegex = /\((.*?)\)/g;
@@ -63,9 +64,9 @@ export class BootstrapService {
         forkJoin(observables)
           .pipe(take(1))
           .subscribe(() => {
-            const mainElement = document.querySelector('main'); if (!mainElement) return;
+            const mainElement = document.querySelector('main');
+            if (!mainElement) return;
             mainElement.style.backgroundImage = `url(${backgroundVarValue}`;
-            // this.renderer2.setStyle(mainElement, 'background-image', backgroundVarValue);
             const endTime = new Date().getTime();
             const timeDifference = endTime - startTime;
 
@@ -81,7 +82,6 @@ export class BootstrapService {
             }
 
             setTimeout(() => {
-              // this.renderer2.addClass(mainElement, 'is-loaded');
               mainElement.classList.add('is-loaded');
 
               if (i === validUrls.length) {

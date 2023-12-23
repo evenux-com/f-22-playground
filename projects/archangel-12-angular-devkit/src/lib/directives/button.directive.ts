@@ -60,17 +60,19 @@ export class ArchangelButtonDirective implements OnChanges {
 
   public ngOnChanges(changes: SimpleChanges): void {
     const isLoading = changes['loading'] && changes['loading'].currentValue;
+    let innerText = '';
     if (this.isBrowser && isLoading && !this.hasAddedLoader) {
-      this.beginLoadingSequence();
+      innerText = this.beginLoadingSequence();
     } else if (this.isBrowser && !isLoading && this.hasAddedLoader) {
-      this.finalizeLoadingSequence();
+      this.finalizeLoadingSequence(innerText);
     }
   }
 
-  private beginLoadingSequence(): void {
+  private beginLoadingSequence(): string {
     this.el.nativeElement.style.height = this.el.nativeElement.offsetHeight + 'px';
     const text = document.createElement('div');
     text.textContent = this.el.nativeElement.innerText;
+    const innerText = this.el.nativeElement.innerHTML;
     this.el.nativeElement.innerText = '';
     text.classList.add('content-wrapper');
     this.el.nativeElement.appendChild(text);
@@ -97,13 +99,19 @@ export class ArchangelButtonDirective implements OnChanges {
 
         setTimeout(() => {
           loaderElement.classList.add('loader-faded-in');
-          setTimeout(() => (this.hasAddedLoader = true), 333);
+          setTimeout(() => {
+            this.hasAddedLoader = true;
+            return innerText;
+          }, 333);
         }, 333);
       }, 111);
     });
+
+    return '';
   }
 
-  private finalizeLoadingSequence(): void {
+  private finalizeLoadingSequence(innerText: string): void {
+    console.log(innerText);
     const loaderEl = this.el.nativeElement.querySelector('.loader');
     loaderEl.classList.remove('loader-faded-in');
 
@@ -114,7 +122,7 @@ export class ArchangelButtonDirective implements OnChanges {
       const text = this.el.nativeElement.querySelector('.content-wrapper');
       text.classList.remove('faded-out');
       setTimeout(() => {
-        this.el.nativeElement.innerText = text.innerText;
+        this.el.nativeElement.innerText = innerText;
         setTimeout(() => (this.hasAddedLoader = false), 333);
       }, 333);
     }, 333);

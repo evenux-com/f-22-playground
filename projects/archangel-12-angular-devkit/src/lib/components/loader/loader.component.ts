@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class LoaderComponent {
   @Input() size: number = 16;
-  @Input() isPageLoader: boolean = false;
   @Input() isHidden: boolean = false;
+  @Input() isPageLoader: boolean = false;
+  @Input() loading: boolean = true;
 }

@@ -23,6 +23,7 @@ export class ButtonsDemoComponent {
   constructor() {
     const colors = ['primary', 'secondary', 'black', 'transparent', 'disabled'];
     let i = 1;
+
     for (const color of colors) {
       const button = {
         color: color,

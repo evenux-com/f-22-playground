@@ -17,7 +17,7 @@
   },
   "private": false,
   "dependencies": {
-    "@aeternum.anonymi/archangel-12-angular-devkit": "^0.3.2",
+    "@aeternum.anonymi/archangel-12-angular-devkit": "^0.3.5",
     "@angular/animations": "^17.0.0",
     "@angular/cdk": "^17.0.1",
     "@angular/common": "^17.0.0",

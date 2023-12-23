@@ -6,6 +6,6 @@
   },
   "assets": [
     "./styles/*.scss",
-    "./src/assets/icon-font/*/*"
+    "./src/icon-font/*/*"
   ]
 }
