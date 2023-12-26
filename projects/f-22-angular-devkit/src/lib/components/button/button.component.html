@@ -1,7 +1,9 @@
-<span
-  class="loader"
-  [class.page-loader-edition]="isPageLoader"
-  [class.loader-hidden]="isHidden"
-  [style.width.px]="size"
-  [style.height.px]="size"
-></span>
+<button type="button">
+  @if (isAnimationInProgress) {
+    <div class="content-wrapper" [class.hidden]="!showContents">
+      <ng-content></ng-content>
+    </div>
+  } @else {
+    <f-22-loader [isHidden]="!showLoader"></f-22-loader>
+  }
+</button>

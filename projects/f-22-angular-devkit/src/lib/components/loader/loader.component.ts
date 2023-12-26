@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: 'loader.component.html',
   styleUrl: 'loader.component.scss',
 })
-export class LoaderComponent {
+export class F22LoaderComponent {
   @Input() size: number = 16;
   @Input() isHidden: boolean = false;
   @Input() isPageLoader: boolean = false;

@@ -3,12 +3,12 @@
     <h5 class="mb-3">Confirmation</h5>
     <p class="mb-5">{{ data.text }}</p>
     <div class="footer">
-      <button type="button" class="mr-2" f-22Button color="primary" [rounded]="true" [border]="true" (click)="dialogRef.close(false)">
+      <f-22-button class="mr-2" color="primary" [rounded]="true" [border]="true" (click)="dialogRef.close(false)">
         {{ data.cancelText }}
-      </button>
-      <button type="button" f-22Button color="black" [rounded]="true" [border]="true" (click)="dialogRef.close(true)">
+      </f-22-button>
+      <f-22-button color="black" [rounded]="true" [border]="true" (click)="dialogRef.close(true)">
         {{ data.submitText }}
-      </button>
+      </f-22-button>
     </div>
   </div>
 </div>

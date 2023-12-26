@@ -12,6 +12,7 @@ import { DialogsDemoComponent } from './dialogs/dialogs.component';
 import { CalendarDemoComponent } from './calendar/calendar.component';
 import { BootstrapService } from '../../projects/f-22-angular-devkit/src/public-api';
 import { IconsDemoComponent } from './icons/icons.component';
+import { DropdownDemoComponent } from './dropdown/dropdown.component';
 
 @Component({
   standalone: true,
@@ -27,6 +28,7 @@ import { IconsDemoComponent } from './icons/icons.component';
     RangesDemoComponent,
     SwiperDemoComponent,
     DialogsDemoComponent,
+    DropdownDemoComponent,
     CalendarDemoComponent,
     IconsDemoComponent,
   ],

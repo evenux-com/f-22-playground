@@ -1,12 +1,26 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  ElementRef,
+  HostBinding,
+  Inject,
+  Input,
+  PLATFORM_ID,
+  SimpleChanges,
+} from '@angular/core';
+import { F22LoaderComponent } from '../loader/loader.component';
 
 @Component({
   standalone: true,
   selector: 'f-22-button',
+  imports: [F22LoaderComponent],
   templateUrl: 'button.component.html',
   styleUrl: 'button.component.scss',
+  inputs: ['F22DropdownTriggerFor'],
 })
-export class F22ButtonComponent {
+export class F22ButtonComponent implements AfterViewInit {
   @Input() color: 'primary' | 'secondary' | 'white' | 'black' | undefined;
   @Input() size: 'large' | 'medium' | 'small' = 'medium';
   @Input() border: boolean = false;
@@ -18,6 +32,12 @@ export class F22ButtonComponent {
   @Input() set disabled(value: boolean) {
     this.isDisabled = value;
   }
+
+  @HostBinding('style.width.px')
+  hostWidth!: number;
+
+  @HostBinding('style.height.px')
+  hostHeight!: number;
 
   @HostBinding('class.btn-disabled') isDisabled: boolean = false;
   @HostBinding('class') get classes(): string {
@@ -43,28 +63,55 @@ export class F22ButtonComponent {
     return classes.join(' ');
   }
 
-  private smallLoaderSize: number = 8;
-  private mediumLoaderSize: number = 12;
-  private largeLoaderSize: number = 16;
+  public isAnimationInProgress: boolean = true;
+  public showContents: boolean = true;
+  public showLoader: boolean = false;
 
-  private hasAddedLoader: boolean = false;
   private isBrowser: boolean = false;
 
   constructor(
     private readonly el: ElementRef,
-    private readonly vcr: ViewContainerRef,
+    private readonly cdRef: ChangeDetectorRef,
     @Inject(PLATFORM_ID) private readonly platformId: NonNullable<unknown>,
   ) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
+  public ngAfterViewInit(): void {
+    this.hostWidth = this.el.nativeElement.offsetWidth + 1;
+    this.hostHeight = this.el.nativeElement.offsetHeight;
+
+    this.cdRef.detectChanges();
+  }
+
   public ngOnChanges(changes: SimpleChanges): void {
+    if (!this.isBrowser) {
+      return;
+    }
+
     const isLoading = changes['loading'] && changes['loading'].currentValue;
-    let innerText = '';
-    if (this.isBrowser && isLoading && !this.hasAddedLoader) {
-      innerText = this.beginLoadingSequence();
-    } else if (this.isBrowser && !isLoading && this.hasAddedLoader) {
-      this.finalizeLoadingSequence(innerText);
+    if (isLoading) {
+      setTimeout(() => {
+        this.showContents = false;
+
+        setTimeout(() => {
+          this.isAnimationInProgress = false;
+
+          setTimeout(() => {
+            this.showLoader = true;
+          }, 300);
+        }, 650);
+      });
+    } else {
+      this.showLoader = false;
+
+      setTimeout(() => {
+        this.isAnimationInProgress = true;
+
+        setTimeout(() => {
+          this.showContents = true;
+        });
+      }, 650);
     }
   }
 }

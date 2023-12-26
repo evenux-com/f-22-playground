@@ -7,7 +7,7 @@
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
-  transition: opacity 0.666s ease-in-out;
+  transition: opacity 0.65s ease-in-out;
 
   &.page-loader-edition {
     position: fixed;
@@ -24,7 +24,7 @@
   }
 
   &.loader-animated-opacity {
-    transform: all 0.666s ease-in-out;
+    transform: all 0.65s ease-in-out;
   }
 
   &.loader-primary {

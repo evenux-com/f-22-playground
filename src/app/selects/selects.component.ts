@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SelectComponent, F22ButtonDirective, NotificationService } from '../../../projects/f-22-angular-devkit/src/public-api';
+import { SelectComponent, NotificationService, F22ButtonComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-selects-demo',
-  imports: [FormsModule, ReactiveFormsModule, SelectComponent, F22ButtonDirective],
+  imports: [FormsModule, ReactiveFormsModule, SelectComponent, F22ButtonComponent],
   providers: [NotificationService],
   templateUrl: './selects.component.html',
   styleUrl: './selects.component.scss',

@@ -1,6 +1,6 @@
 import { ComponentRef, Injectable, ViewContainerRef, Inject, PLATFORM_ID } from '@angular/core';
 import { forkJoin, fromEvent, take } from 'rxjs';
-import { LoaderComponent } from '../../public-api';
+import { F22LoaderComponent } from '../../public-api';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class BootstrapService {
   public isBrowser: boolean = false;
-  private loaderRef!: ComponentRef<LoaderComponent>;
+  private loaderRef!: ComponentRef<F22LoaderComponent>;
 
   constructor(
     private readonly vcr: ViewContainerRef,
@@ -26,7 +26,7 @@ export class BootstrapService {
   }
 
   private initializeLoader(): void {
-    this.loaderRef = this.vcr.createComponent(LoaderComponent);
+    this.loaderRef = this.vcr.createComponent(F22LoaderComponent);
     this.loaderRef.instance.isPageLoader = true;
     this.loaderRef.instance.loading = true;
     this.loaderRef.instance.size = 42;

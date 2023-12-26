@@ -1,6 +1,6 @@
 // Directives
-export * from './lib/directives/button.directive';
 export * from './lib/directives/form-control.directive';
+export * from './lib/directives/dropdown-trigger-for.directive';
 
 // Components
 export * from './lib/components/loader/loader.component';
@@ -13,6 +13,8 @@ export * from './lib/components/swiper/swiper.component';
 export * from './lib/components/radios/radios.component';
 export * from './lib/components/range-select/range-select.component';
 export * from './lib/components/range-picker/range-picker.component';
+export * from './lib/components/button/button.component';
+export * from './lib/components/dropdown/dropdown.component';
 
 // Services
 export * from './lib/services/notification.service';

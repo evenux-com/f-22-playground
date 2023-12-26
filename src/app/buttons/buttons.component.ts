@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { F22ButtonDirective, LoaderComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
+import { F22LoaderComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
+import { F22ButtonComponent } from '../../../projects/f-22-angular-devkit/src/public-api';
 
 @Component({
   standalone: true,
   selector: 'app-buttons-demo',
-  imports: [F22ButtonDirective, LoaderComponent],
+  imports: [F22ButtonComponent, F22LoaderComponent],
   templateUrl: './buttons.component.html',
   styleUrl: './buttons.component.scss',
 })

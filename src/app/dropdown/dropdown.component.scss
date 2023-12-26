@@ -14,13 +14,18 @@
 
   .row {
     display: flex;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include desktop() {
+      button {
+        flex: 1 1 15%;
+      }
+    }
 
     @include mobile() {
-      flex-direction: column;
-
       button {
-        width: 100%;
+        flex: 50%;
       }
     }
   }

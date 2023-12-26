@@ -2,8 +2,7 @@
   <h5 class="mb-3">Buttons</h5>
   <div class="row row-full-width">
     @for (button of buttons1; track button) {
-      <button
-        f-22Button
+      <f-22-button
         [color]="button.color === 'transparent' ? '' : button.color === 'disabled' ? 'primary' : button.color"
         [rounded]="true"
         [border]="true"
@@ -14,14 +13,13 @@
       >
         <i class="icon-bell"></i>
         {{ button.color === 'disabled' ? 'Disabled' : 'Simulate' }}
-      </button>
+      </f-22-button>
     }
   </div>
 
   <div class="row">
     @for (button of buttons2; track button) {
-      <button
-        f-22Button
+      <f-22-button
         [color]="button.color === 'transparent' ? '' : button.color === 'disabled' ? 'primary' : button.color"
         [rounded]="true"
         [border]="true"
@@ -31,14 +29,13 @@
         (click)="simulateAction(button)"
       >
         {{ button.color === 'disabled' ? 'Disabled' : 'Simulate' }}
-      </button>
+      </f-22-button>
     }
   </div>
 
   <div class="row">
     @for (button of buttons3; track button) {
-      <button
-        f-22Button
+      <f-22-button
         [color]="button.color === 'transparent' ? '' : button.color === 'disabled' ? 'primary' : button.color"
         [rounded]="true"
         [border]="true"
@@ -48,7 +45,7 @@
         (click)="simulateAction(button)"
       >
         {{ button.color === 'disabled' ? 'Disabled' : 'Simulate' }}
-      </button>
+      </f-22-button>
     }
   </div>
 </div>
