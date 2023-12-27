@@ -27,7 +27,7 @@ export class F22ButtonComponent implements AfterViewInit {
   @Input() rounded: boolean = false;
   @Input() fullWidth: boolean = false;
   @Input() loading: boolean = false;
-  @Input() loaderSize: number | null = null;
+  @Input() loaderSize: number = 12;
 
   @Input() set disabled(value: boolean) {
     this.isDisabled = value;
@@ -78,8 +78,25 @@ export class F22ButtonComponent implements AfterViewInit {
   }
 
   public ngAfterViewInit(): void {
-    this.hostWidth = this.el.nativeElement.offsetWidth + 1;
+    this.hostWidth = this.el.nativeElement.offsetWidth + 2;
     this.hostHeight = this.el.nativeElement.offsetHeight;
+
+    switch (this.size) {
+      case 'small': {
+        this.loaderSize = 8;
+        break;
+      }
+
+      case 'medium': {
+        this.loaderSize = 12;
+        break;
+      }
+
+      case 'large': {
+        this.loaderSize = 16;
+        break;
+      }
+    }
 
     this.cdRef.detectChanges();
   }
