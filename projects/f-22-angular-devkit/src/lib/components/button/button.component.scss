@@ -16,14 +16,19 @@
   line-height: var(--font-size);
   font-size: var(--font-size);
 
-  button {
-    cursor: pointer;
+  .button-wrapper {
+    display: flex;
+    flex-direction: column;
 
-    .content-wrapper {
-      transition: opacity 0.65s ease-in-out;
+    button {
+      cursor: pointer;
 
-      &.hidden {
-        opacity: 0;
+      .content-wrapper {
+        transition: opacity 0.65s ease-in-out;
+
+        &.hidden {
+          opacity: 0;
+        }
       }
     }
   }

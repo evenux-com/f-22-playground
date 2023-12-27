@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Inject, Input, Output, PLATFORM_ID } from '@angular/core';
 import { Navigation, Pagination } from 'swiper/modules';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import Swiper from 'swiper';
-import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -33,35 +33,40 @@ export class F22SwiperComponent implements AfterViewInit {
   public swiper!: Swiper;
   public identifier!: string;
 
-  constructor() {
+  private isBrowser: boolean = false;
+
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.identifier = this.generateRandomString(12);
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   public ngAfterViewInit(): void {
-    this.swiper = new Swiper(`.${this.identifier}`, {
-      modules: [Navigation, Pagination],
-      ...this.config,
-      slidesPerView: this.config?.slidesPerView || 1,
-      spaceBetween: this.config?.spaceBetween || 40,
-      direction: this.config?.direction || 'horizontal',
-      loop: this.config?.loop || false,
-      pagination: {
-        el: '.swiper-pagination',
-        enabled: this.config?.pagination?.enabled || false,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        enabled: this.config?.navigation?.enabled || false,
-      },
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-    });
+    if (this.isBrowser) {
+      this.swiper = new Swiper(`.${this.identifier}`, {
+        modules: [Navigation, Pagination],
+        ...this.config,
+        slidesPerView: this.config?.slidesPerView || 1,
+        spaceBetween: this.config?.spaceBetween || 40,
+        direction: this.config?.direction || 'horizontal',
+        loop: this.config?.loop || false,
+        pagination: {
+          el: '.swiper-pagination',
+          enabled: this.config?.pagination?.enabled || false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+          enabled: this.config?.navigation?.enabled || false,
+        },
+        scrollbar: {
+          el: '.swiper-scrollbar',
+        },
+      });
 
-    this.swiper.on('slideChange', (swiper) => {
-      this.onSlideChange.emit(swiper.activeIndex);
-    });
+      this.swiper.on('slideChange', (swiper) => {
+        this.onSlideChange.emit(swiper.activeIndex);
+      });
+    }
   }
 
   private generateRandomString(length: number): string {

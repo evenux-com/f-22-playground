@@ -1,9 +1,11 @@
-<button type="button">
-  @if (isAnimationInProgress) {
-    <div class="content-wrapper" [class.hidden]="!showContents">
-      <ng-content></ng-content>
-    </div>
-  } @else {
-    <f-22-loader [isHidden]="!showLoader" [size]="loaderSize"></f-22-loader>
-  }
-</button>
+<div class="button-wrapper">
+  <button type="button">
+    @if (isAnimationInProgress) {
+      <div class="content-wrapper" [class.hidden]="!showContents">
+        <ng-content></ng-content>
+      </div>
+    } @else {
+      <f-22-loader [isHidden]="!showLoader" [size]="loaderSize"></f-22-loader>
+    }
+  </button>
+</div>
